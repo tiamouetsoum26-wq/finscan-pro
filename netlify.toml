@@ -1,0 +1,13 @@
+[build]
+  functions = "netlify/functions"
+  command = "npm install"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["xlsx"]
+  included_files = ["DEPOUILLEMENT_FINSCAN.xlsx"]
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
