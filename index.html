@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FinScan Pro V1.0</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkIiB4MT0iMCIgeTE9IjAiIHgyPSIxMDAiIHkyPSIxMDAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBBODc2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwNTYzQSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxjbGlwUGF0aCBpZD0ibGVuc0NsaXAiPgogICAgICA8Y2lyY2xlIGN4PSI0MCIgY3k9IjQyIiByPSIxMyIvPgogICAgPC9jbGlwUGF0aD4KICA8L2RlZnM+CgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjIiIGZpbGw9InVybCgjYmdHcmFkKSIvPgoKICA8IS0tIG1hZ25pZnlpbmcgZ2xhc3MgLS0+CiAgPGNpcmNsZSBjeD0iNDAiIGN5PSI0MiIgcj0iMTciIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI2LjUiLz4KICA8bGluZSB4MT0iNTIiIHkxPSI1NCIgeDI9IjY4IiB5Mj0iNzAiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI3LjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgoKICA8IS0tIGFzY2VuZGluZyBiYXIgY2hhcnQgaW5zaWRlIHRoZSBsZW5zOiBudW1iZXJzIC8gY29udGludW91cyBncm93dGggLS0+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2xlbnNDbGlwKSI+CiAgICA8cmVjdCB4PSIyOSIgeT0iNDQiIHdpZHRoPSI2IiBoZWlnaHQ9IjExIiByeD0iMS41IiBmaWxsPSIjRkZGRkZGIi8+CiAgICA8cmVjdCB4PSIzNyIgeT0iMzgiIHdpZHRoPSI2IiBoZWlnaHQ9IjE3IiByeD0iMS41IiBmaWxsPSIjRkZGRkZGIi8+CiAgICA8cmVjdCB4PSI0NSIgeT0iMzEiIHdpZHRoPSI2IiBoZWlnaHQ9IjI0IiByeD0iMS41IiBmaWxsPSIjRkZGRkZGIi8+CiAgPC9nPgoKICA8IS0tIEFJIHNwYXJrOiBjb250aW51b3VzIHNjYW5uaW5nIC8gaW5zaWdodCAtLT4KICA8cGF0aCBkPSJNNzQsMTkgTDc1LjU2LDI0LjQ0IEw4MSwyNiBMNzUuNTYsMjcuNTYgTDc0LDMzIEw3Mi40NCwyNy41NiBMNjcsMjYgTDcyLjQ0LDI0LjQ0IFoiCiAgICAgICAgZmlsbD0iI0I2RjJEOSIvPgo8L3N2Zz4K"/>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAACr0lEQVR4nOyXUUhTURiAzzn3bnOlrtkshVIsIySURtAgyjUQgnruPSF7yufeeu+19FGi8CHDCnQ9qpuFDulhlaEhCMVolgVzc3fb3c75O3d3bGOFr+dMzsfd7s85/8P/8Z9z7r16JBJBzYzOf8FgEDUn0WhUt6Pp6emDUwcGBgYHB51OJ5KMigAAuhocOd558n85sPp+KR6PZ7PZQCDgcrmQTFQFIFsASFPK/snQoFCEoaEhr7djcXEpFLre0tKCpIHYNwBmlsAwYT/PnDo61633+DQe8yuXZ5QCz+nvP+v3XwyHw4ZhIGmodIAxYGD1oesY6fZagy4H9vc5178XeO2U0tUyfBxjPDPzcnT0DpKD2hLi/72djnY3rp9mDJVKJX8gNBwacWi8eFTIGW/nZpE0VDvAuMT2jmmWaEMGwTjDF1IRCEYawYQyK1kaah1g5YsyaMjgQkVaGdQ14sJgt0sSah2A8h4AdlBxQKC1vW1s7C6ShnoB4EvDXh3chUIxXUwSpLfqPp1Uzn63A585oSGZqC0hKGvwAydT/PU1vbC2+4w4rA3t0U75vbf7Wq/0+jrOn3Yjyag8B6wOWNsYJXObsT9PP6Se29Vz9mji3e+JrHvBrj6TyUxMTCJpqD9GYbew9XnvzXZ2uSHp3qUHwz03eWCYaCtZkmoTVzsA+2ZqPTX/zYg1ZDy8NmlXv5ZYebzyyDqsmHynEK8q9vNFgnyhYNZPP7nx2nekiwevNqdmN6baHL7lH3pVWwYqArlcjnw82oMuVyc8Hs/4+H07npub3/i0cwHd4rGB81K9kGL+RXYYPmiaFyUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgGiUgmkMhEI1GUdPyFwAA///gSpIJAAAABklEQVQDAEtMNdswxwkcAAAAAElFTkSuQmCC"/>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAEUUlEQVR4nOza3WtTZwDH8eecnCTtVu3q4qawVdwco4yWhcEKY7MrCIPtevcK6pVee+e9t1ovRZReqPgCtV6qiYoW8aK+oSIISrG+Qm1M0ryc8/ikCUlt/fkH9Hw/5OXhnOcuX57nnCRBLpczwKcE7jkyMmKAj+Xz+aA5Gh8f//zUgYGBwcHBVCplEButOKw1f45s+3r9t5+aY29cuzw9PV0sFoeHh9PptEE8tOOwxYq182EYrZiRsJWaHRoa6utbd+nS5dHRv7u6ugxiwG++WRtV67ZUte8XolRgftoY9GcSbuwe5YUoDK2bs2XLj9nsr5OTk6VSySAGWitHFNnINtaPDV/5G/saB9NJL7s5de9ZxXURhuGNRe6453knT57asWO7wWrX2Vbc66b1ybXd3tLTUWTq9Xp2eHTr6LZkwoVhKuXShYnTBjHQXjkiF8iTF9VqPVw2w/e8gttcatb3TML3/DBqTEYMdFaOaPERRnbZDBdLLWwdDBJ+2rPNZQarXmflsIvXHDb63Advfduzds2uXTsNYmBpHNZtF80dw3US2tp8bdY3QU+QCfzWdxvdSe+HbxIG8dDZVuxiIu7GpFB79Wj+4s3Xx/xk4+K0N/Fdtu//zT1/bMqs+/n7boPYaH3P0Vg5GpekZrb8cOrt0Vtzx5tlOO/CmatvxordF5tlFAqFsbHDBjGw9FbWvq48vvvu3JPilWWTdv+2b2v/v25QqprHs3UuSGOivXLY99W5e3Pnn5amls3Y/9fhZhk3Z64fvH6gcVMTEUcstFeOaOrliRn/fmirS08f+uds5osNbnDm4ZHTD46sSWauPA/aSWF1a8VRLpf921/2m9/bJ3p7e/fu3dMcT0ycf3DnxS/mPzcueQv8MBsTXi6X488+WKnzZx9gJeKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IDXiyOfzBljhAwAAAP//sFByIgAAAAZJREFUAwBmuTers6PcegAAAABJRU5ErkJggg=="/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<style>
+:root{
+  --green:#00875A;--green2:#006644;--green-light:#E3FCEF;--green-mid:#ABF5D1;
+  --white:#FFFFFF;--gray:#F4F5F7;--gray2:#EBECF0;--gray3:#C1C7D0;
+  --text:#172B4D;--text2:#5E6C84;--text3:#97A0AF;
+  --red:#DE350B;--red-bg:#FFEBE6;--orange:#FF8B00;--orange-bg:#FFFAE6;
+  --navy:#0052CC;--navy-bg:#DEEBFF;
+  --radius:8px;--radius-lg:12px;
+  --shadow:0 1px 3px rgba(9,30,66,.12),0 0 0 1px rgba(9,30,66,.08);
+  --shadow-lg:0 8px 24px rgba(9,30,66,.15),0 0 0 1px rgba(9,30,66,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--gray);color:var(--text);min-height:100vh;font-size:14px;}
+
+/* ── SCREENS ── */
+.screen{display:none;min-height:100vh;}
+.screen.active{display:flex;}
+
+/* ══ LANDING PAGE ══════════════════════════════════ */
+#screen-landing{flex-direction:column;background:var(--white);}
+.land-nav{background:var(--white);border-bottom:1px solid var(--gray2);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.land-brand{display:flex;align-items:center;gap:10px;}
+.land-logo{width:36px;height:36px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.land-logo svg{width:20px;height:20px;fill:white;}
+.land-name{font-size:18px;font-weight:700;color:var(--text);}
+.land-ver{font-size:10px;background:var(--green-light);color:var(--green2);border-radius:4px;padding:2px 7px;margin-left:6px;font-weight:600;}
+.land-nav-links{display:flex;gap:24px;align-items:center;}
+.land-nav-link{font-size:13px;color:var(--text2);cursor:pointer;text-decoration:none;}
+.land-nav-link:hover{color:var(--green);}
+.btn-land-login{background:var(--green);color:white;border:none;border-radius:6px;padding:8px 18px;font-size:13px;font-weight:600;cursor:pointer;}
+.btn-land-login:hover{background:var(--green2);}
+
+.land-hero{padding:80px 2rem 60px;text-align:center;max-width:780px;margin:0 auto;}
+.land-hero-tag{display:inline-block;background:var(--green-light);color:var(--green2);font-size:12px;font-weight:600;padding:5px 14px;border-radius:99px;margin-bottom:20px;}
+.land-hero h1{font-size:42px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:16px;}
+.land-hero h1 span{color:var(--green);}
+.land-hero p{font-size:17px;color:var(--text2);line-height:1.7;margin-bottom:32px;}
+.land-hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-hero-primary{background:var(--green);color:white;border:none;border-radius:8px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;transition:all .15s;}
+.btn-hero-primary:hover{background:var(--green2);transform:translateY(-1px);}
+.btn-hero-secondary{background:white;color:var(--green);border:2px solid var(--green);border-radius:8px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;}
+.btn-hero-secondary:hover{background:var(--green-light);}
+
+.land-features{background:var(--gray);padding:60px 2rem;}
+.land-features-inner{max-width:1000px;margin:0 auto;}
+.land-features h2{font-size:28px;font-weight:700;text-align:center;margin-bottom:8px;}
+.land-features-sub{text-align:center;color:var(--text2);margin-bottom:40px;}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.feature-card{background:white;border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow);}
+.feature-icon{width:44px;height:44px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.feature-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.feature-desc{font-size:13px;color:var(--text2);line-height:1.6;}
+
+.land-how{padding:60px 2rem;max-width:900px;margin:0 auto;}
+.land-how h2{font-size:28px;font-weight:700;text-align:center;margin-bottom:40px;}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.how-step{text-align:center;}
+.how-num{width:40px;height:40px;border-radius:50%;background:var(--green);color:white;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+.how-step-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.how-step-desc{font-size:12px;color:var(--text2);}
+
+.land-pricing{background:var(--gray);padding:60px 2rem;}
+.land-pricing-inner{max-width:800px;margin:0 auto;text-align:center;}
+.land-pricing h2{font-size:28px;font-weight:700;margin-bottom:8px;}
+.land-pricing-sub{color:var(--text2);margin-bottom:40px;}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:600px;margin:0 auto;}
+.pricing-card{background:white;border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow);border:2px solid transparent;text-align:left;}
+.pricing-card.featured{border-color:var(--green);}
+.pricing-badge{background:var(--green);color:white;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;display:inline-block;margin-bottom:12px;}
+.pricing-name{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.pricing-price{font-size:28px;font-weight:800;color:var(--text);margin:12px 0 4px;}
+.pricing-price span{font-size:13px;font-weight:400;color:var(--text2);}
+.pricing-features{list-style:none;margin:16px 0;display:flex;flex-direction:column;gap:8px;}
+.pricing-features li{font-size:12px;color:var(--text2);display:flex;gap:8px;align-items:flex-start;}
+.pricing-features li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;}
+.btn-pricing{width:100%;padding:10px;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer;border:2px solid var(--green);background:transparent;color:var(--green);transition:all .15s;margin-top:8px;}
+.btn-pricing:hover,.pricing-card.featured .btn-pricing{background:var(--green);color:white;}
+
+.land-footer{background:var(--text);color:rgba(255,255,255,.7);padding:24px 2rem;text-align:center;font-size:12px;}
+.land-footer strong{color:white;}
+
+/* ══ AUTH ══════════════════════════════════════════ */
+#screen-auth{align-items:center;justify-content:center;background:var(--gray);}
+.auth-card{background:white;border-radius:var(--radius-lg);padding:2.5rem 2rem;width:100%;max-width:420px;box-shadow:var(--shadow-lg);}
+.auth-brand{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;justify-content:center;}
+.auth-brand-icon{width:40px;height:40px;background:var(--green);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.auth-brand-name{font-size:20px;font-weight:800;color:var(--text);}
+.auth-brand-ver{font-size:10px;background:var(--green-light);color:var(--green2);border-radius:4px;padding:2px 7px;font-weight:600;}
+.auth-tabs{display:flex;border:1px solid var(--gray2);border-radius:6px;overflow:hidden;margin-bottom:1.5rem;}
+.auth-tab{flex:1;padding:9px;font-size:13px;font-weight:600;border:none;cursor:pointer;background:transparent;color:var(--text2);}
+.auth-tab.active{background:var(--green);color:white;}
+.form-group{margin-bottom:.85rem;}
+.form-label{font-size:12px;font-weight:600;color:var(--text);display:block;margin-bottom:4px;}
+.form-input{width:100%;padding:9px 11px;border:2px solid var(--gray2);border-radius:6px;font-size:13px;color:var(--text);transition:border-color .15s;outline:none;background:white;}
+.form-input:focus{border-color:var(--green);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.pwd-wrap{position:relative;}
+.pwd-wrap .form-input{padding-right:38px;}
+.pwd-eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:15px;color:var(--text3);}
+.btn-primary{width:100%;padding:10px;background:var(--green);color:white;font-size:14px;font-weight:700;border:none;border-radius:6px;cursor:pointer;}
+.btn-primary:hover{background:var(--green2);}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed;}
+.auth-alert{border-radius:6px;padding:10px 13px;font-size:12px;margin-bottom:1rem;line-height:1.5;}
+.auth-alert.error{background:var(--red-bg);color:var(--red);border-left:3px solid var(--red);}
+.auth-alert.success{background:var(--green-light);color:var(--green2);border-left:3px solid var(--green);}
+.auth-alert.warning{background:var(--orange-bg);color:var(--orange);border-left:3px solid var(--orange);}
+.auth-link{color:var(--green);font-weight:600;cursor:pointer;}
+.forgot-link{font-size:11px;color:var(--text2);text-align:right;display:block;margin-top:3px;cursor:pointer;}
+.forgot-link:hover{color:var(--green);}
+
+/* ══ ADMIN ══════════════════════════════════════════ */
+#screen-admin{flex-direction:column;}
+.admin-bar{background:var(--green2);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;}
+.admin-bar-left{display:flex;align-items:center;gap:10px;}
+.admin-bar-icon{width:28px;height:28px;background:white;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.admin-bar-title{font-size:14px;font-weight:700;color:white;}
+.btn-admin-logout{background:rgba(255,255,255,.15);color:white;font-size:11px;font-weight:600;padding:6px 14px;border-radius:6px;cursor:pointer;border:none;}
+.btn-admin-logout:hover{background:rgba(255,255,255,.25);}
+.admin-main{padding:1.5rem;max-width:1100px;margin:0 auto;width:100%;}
+.admin-topbar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.admin-search{flex:1;min-width:200px;padding:8px 12px;border:2px solid var(--gray2);border-radius:6px;font-size:13px;outline:none;}
+.admin-search:focus{border-color:var(--green);}
+.admin-filter{padding:8px 12px;border:2px solid var(--gray2);border-radius:6px;font-size:12px;outline:none;background:white;cursor:pointer;}
+.btn-refresh{padding:8px 14px;background:var(--green-light);color:var(--green2);border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;}
+.btn-refresh:hover{background:var(--green);color:white;}
+.admin-section-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;}
+.admin-table-wrap{background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:1.5rem;}
+.admin-table-wrap table{width:100%;border-collapse:collapse;font-size:12px;}
+.admin-table-wrap th{background:var(--green2);color:white;padding:9px 12px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+.admin-table-wrap td{padding:9px 12px;border-bottom:1px solid var(--gray2);}
+.admin-table-wrap tr:hover td{background:var(--gray);}
+.badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;}
+.badge-pending{background:var(--orange-bg);color:var(--orange);}
+.badge-active{background:var(--green-light);color:var(--green2);}
+.badge-rejected{background:var(--red-bg);color:var(--red);}
+.badge-expired{background:var(--gray2);color:var(--text2);}
+.badge-suspended{background:var(--red-bg);color:var(--red);}
+.badge-deleted{background:var(--gray2);color:var(--text2);}
+.btn-sm{font-size:11px;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;border:none;}
+.btn-approve{background:var(--green-light);color:var(--green2);}
+.btn-approve:hover{background:var(--green);color:white;}
+.btn-reject{background:var(--red-bg);color:var(--red);}
+.btn-reject:hover{background:var(--red);color:white;}
+.admin-card{background:white;border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);max-width:500px;margin-top:1rem;}
+
+/* ══ APP ════════════════════════════════════════════ */
+#screen-app{flex-direction:column;}
+.topbar{background:var(--green2);height:54px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 4px rgba(0,0,0,.15);}
+.topbar-brand{display:flex;align-items:center;gap:10px;}
+.topbar-icon{width:32px;height:32px;background:white;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.topbar-name{font-size:16px;font-weight:800;color:white;}
+.topbar-ver{font-size:9px;background:rgba(255,255,255,.2);color:white;border-radius:4px;padding:2px 6px;font-weight:700;}
+.topbar-right{display:flex;align-items:center;gap:10px;}
+.topbar-user{font-size:12px;color:rgba(255,255,255,.8);}
+.topbar-avatar{width:30px;height:30px;border-radius:50%;background:white;color:var(--green2);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.btn-top-logout{background:transparent;border:1px solid rgba(255,255,255,.3);color:white;font-size:11px;padding:5px 12px;border-radius:5px;cursor:pointer;}
+.btn-top-logout:hover{background:rgba(255,255,255,.1);}
+
+.app-layout{display:grid;grid-template-columns:220px 1fr;flex:1;min-height:0;}
+.sidebar{background:white;border-right:1px solid var(--gray2);padding:1rem .75rem;display:flex;flex-direction:column;gap:2px;}
+.sidebar-label{font-size:10px;font-weight:700;color:var(--text3);letter-spacing:.08em;text-transform:uppercase;margin:1rem 0 4px 8px;}
+.nav-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text2);cursor:pointer;border:none;background:transparent;width:100%;text-align:left;}
+.nav-item:hover{background:var(--green-light);color:var(--green2);}
+.nav-item.active{background:var(--green-light);color:var(--green2);font-weight:700;}
+.nav-item .ni{font-size:15px;width:18px;text-align:center;}
+.ni-badge{margin-left:auto;font-size:10px;background:var(--green);color:white;border-radius:99px;padding:1px 7px;font-weight:700;}
+.sidebar-bottom{margin-top:auto;padding:.75rem;background:var(--green-light);border-radius:8px;border:1px solid var(--green-mid);}
+.quota-title{font-size:10px;font-weight:700;color:var(--green2);margin-bottom:4px;}
+.quota-bar{height:5px;background:var(--gray2);border-radius:99px;overflow:hidden;margin:4px 0;}
+.quota-fill{height:100%;background:var(--green);border-radius:99px;}
+.quota-text{font-size:10px;color:var(--text2);}
+
+.app-main{overflow-y:auto;padding:1.5rem;}
+.page{display:none;}
+.page.active{display:block;}
+.page-header{margin-bottom:1.5rem;}
+.page-title{font-size:20px;font-weight:700;color:var(--text);}
+.page-sub{font-size:13px;color:var(--text2);margin-top:3px;}
+
+/* SCANNER */
+.upload-area{background:white;border:2px dashed var(--gray3);border-radius:var(--radius-lg);padding:2.5rem 2rem;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:1rem;}
+.upload-area:hover,.upload-area.drag{border-color:var(--green);background:var(--green-light);}
+.upload-area.loaded{border-style:solid;border-color:var(--green);background:var(--green-light);}
+.upload-icon{font-size:40px;display:block;margin-bottom:10px;}
+.upload-title{font-size:15px;font-weight:700;color:var(--text);}
+.upload-hint{font-size:12px;color:var(--text2);margin-top:4px;}
+.format-pills{display:flex;gap:5px;justify-content:center;margin-top:10px;flex-wrap:wrap;}
+.format-pill{font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--green);color:white;}
+#file-input-main{display:none;}
+.files-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem;}
+.file-item{background:white;border:1.5px solid var(--gray2);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow);}
+.fi-icon{font-size:22px;flex-shrink:0;}
+.fi-info{flex:1;min-width:0;}
+.fi-name{font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.fi-meta{font-size:11px;color:var(--text2);margin-top:2px;}
+.fi-remove{background:none;border:none;font-size:18px;cursor:pointer;color:var(--text3);}
+.fi-remove:hover{color:var(--red);}
+.btn-analyze{width:100%;padding:13px;background:var(--green);color:white;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:1rem;}
+.btn-analyze:hover:not(:disabled){background:var(--green2);}
+.btn-analyze:disabled{opacity:.35;cursor:not-allowed;}
+.progress-card{background:white;border-radius:var(--radius);padding:1.25rem 1.5rem;box-shadow:var(--shadow);display:none;margin-bottom:1rem;}
+.progress-top{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.progress-bar{height:6px;background:var(--gray2);border-radius:99px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--green);border-radius:99px;transition:width .5s ease;}
+.progress-steps{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+.ps{font-size:10px;padding:3px 10px;border-radius:99px;background:var(--gray2);color:var(--text2);font-weight:600;}
+.ps.done{background:var(--green-light);color:var(--green2);}
+.ps.active{background:var(--green);color:white;}
+.results-card{display:none;}
+.results-topbar{background:var(--green2);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px;}
+.rt-left h3{font-size:14px;font-weight:700;color:white;}
+.rt-left p{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px;}
+.rt-actions{display:flex;gap:7px;}
+.btn-act{padding:7px 13px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;border:none;}
+.btn-act-ghost{background:rgba(255,255,255,.15);color:white;}
+.btn-act-ghost:hover{background:rgba(255,255,255,.25);}
+.btn-act-green{background:white;color:var(--green2);}
+.btn-act-green:hover{background:var(--green-light);}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1rem;}
+.stat-box{background:white;border-radius:var(--radius);padding:12px 14px;box-shadow:var(--shadow);}
+.stat-lbl{font-size:10px;color:var(--text2);margin-bottom:3px;}
+.stat-val{font-size:17px;font-weight:700;color:var(--text);}
+.stat-val.g{color:var(--green2);}
+.stat-val.r{color:var(--red);}
+.state-tabs{display:flex;gap:4px;border-bottom:2px solid var(--gray2);margin-bottom:1rem;}
+.stab{padding:9px 16px;font-size:12px;font-weight:600;border:none;background:transparent;cursor:pointer;color:var(--text2);border-bottom:3px solid transparent;margin-bottom:-2px;border-radius:5px 5px 0 0;}
+.stab:hover{color:var(--green2);background:var(--green-light);}
+.stab.active{color:var(--green2);border-bottom-color:var(--green);background:var(--green-light);}
+.stab .cnt{font-size:9px;background:var(--gray2);color:var(--text2);border-radius:99px;padding:1px 6px;margin-left:4px;}
+.stab.active .cnt{background:var(--green);color:white;}
+.tab-pane{display:none;}
+.tab-pane.active{display:block;}
+.result-table-wrap{background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:10px;}
+.rt-head{background:var(--green2);padding:9px 14px;display:flex;align-items:center;justify-content:space-between;}
+.rt-head-title{font-size:12px;font-weight:700;color:white;}
+.rt-head-cnt{font-size:10px;background:rgba(255,255,255,.2);color:white;border-radius:4px;padding:2px 7px;}
+table{width:100%;border-collapse:collapse;font-size:11px;}
+th{background:var(--gray);padding:7px 10px;text-align:left;font-size:10px;font-weight:700;color:var(--text2);border-bottom:2px solid var(--gray2);}
+th.r{text-align:right;}
+td{padding:6px 10px;border-bottom:1px solid var(--gray2);color:var(--text);}
+td.r{text-align:right;font-variant-numeric:tabular-nums;}
+tr:hover td{background:var(--gray);}
+tr.tot td{background:var(--green-light);font-weight:700;color:var(--green2);}
+tr.fin td{background:var(--green2);color:white;font-weight:700;}
+
+/* ALERTS */
+.alert-row{border-radius:6px;padding:10px 13px;font-size:11px;margin-bottom:8px;display:flex;gap:8px;border-left:3px solid;}
+.al-ok{background:var(--green-light);color:var(--green2);border-color:var(--green);}
+.al-warn{background:var(--orange-bg);color:var(--orange);border-color:var(--orange);}
+.al-err{background:var(--red-bg);color:var(--red);border-color:var(--red);}
+
+/* HISTORIQUE */
+.hist-grid{display:flex;flex-direction:column;gap:8px;}
+.hist-card{background:white;border-radius:var(--radius);padding:12px 16px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow);}
+.hist-icon{width:40px;height:40px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.hist-info{flex:1;min-width:0;}
+.hist-name{font-size:13px;font-weight:700;color:var(--text);}
+.hist-meta{font-size:11px;color:var(--text2);margin-top:2px;}
+.hist-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+.hist-date{font-size:10px;color:var(--text3);}
+.btn-hist{border:none;border-radius:5px;padding:4px 10px;font-size:10px;font-weight:700;cursor:pointer;}
+.btn-hist-dl{background:var(--green-light);color:var(--green2);}
+.btn-hist-dl:hover{background:var(--green);color:white;}
+.btn-hist-del{background:var(--red-bg);color:var(--red);}
+.btn-hist-del:hover{background:var(--red);color:white;}
+
+/* PROFIL */
+.profil-card{background:white;border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);max-width:480px;}
+.profil-av-lg{width:56px;height:56px;border-radius:50%;background:var(--green);color:white;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+
+.empty-state{text-align:center;padding:3rem 2rem;color:var(--text2);}
+.empty-state .ei{font-size:44px;margin-bottom:12px;}
+.empty-state p{font-size:13px;}
+
+@media(max-width:800px){
+  .app-layout{grid-template-columns:1fr;}
+  .sidebar{display:none;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .features-grid,.how-steps,.pricing-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ LANDING PAGE ══════════════════════════════════════ -->
+<!-- Landing page disponible via /landing -->
+<!-- ══ AUTH ══════════════════════════════════════════════ -->
+<div class="screen active" id="screen-auth">
+<div class="auth-card">
+  <div class="auth-brand">
+    <div class="auth-brand-icon">📊</div>
+    <div>
+      <span class="auth-brand-name">FinScan Pro</span>
+      <span class="auth-brand-ver">V1.0</span>
+    </div>
+  </div>
+
+  <div id="auth-login">
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="showAuthSection('login',this)">Connexion</button>
+      <button class="auth-tab" onclick="showAuthSection('register',this)">S'inscrire</button>
+    </div>
+    <div class="auth-alert" id="login-alert"></div>
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input class="form-input" type="email" id="login-email" placeholder="votre@email.com"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Mot de passe</label>
+      <div class="pwd-wrap">
+        <input class="form-input" type="password" id="login-pwd" placeholder="••••••••"/>
+        <button class="pwd-eye" onclick="togglePwd('login-pwd',this)" tabindex="-1">👁️</button>
+      </div>
+      <span class="forgot-link" onclick="showAuthSection('forgot')">Mot de passe oublié ?</span>
+    </div>
+    <button class="btn-primary" id="btn-login" type="button">Se connecter</button>
+    <p style="text-align:center;font-size:11px;color:var(--text2);margin-top:10px;">
+      Pas de compte ? <span class="auth-link" onclick="showAuthSection('register')">S'inscrire</span>
+      
+    </p>
+    <p style="text-align:center;font-size:10px;color:var(--text3);margin-top:8px;">
+      <span class="auth-link" style="font-size:10px;color:var(--text3);text-decoration:underline;" onclick="resetApp()">Réinitialiser l'application</span>
+    </p>
+  </div>
+
+  <div id="auth-register" style="display:none;">
+    <div class="auth-tabs">
+      <button class="auth-tab" onclick="showAuthSection('login',this)">Connexion</button>
+      <button class="auth-tab active">S'inscrire</button>
+    </div>
+    <div class="auth-alert" id="register-alert"></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Prénom</label><input class="form-input" type="text" id="reg-prenom" placeholder="Jean"/></div>
+      <div class="form-group"><label class="form-label">Nom</label><input class="form-input" type="text" id="reg-nom" placeholder="Kouassi"/></div>
+    </div>
+    <div class="form-group"><label class="form-label">Email professionnel</label><input class="form-input" type="email" id="reg-email" placeholder="j.kouassi@banque.ci"/></div>
+    <div class="form-group"><label class="form-label">Institution / Banque</label><input class="form-input" type="text" id="reg-institution" placeholder="Orabank Côte d'Ivoire"/></div>
+    <div class="form-group">
+      <label class="form-label">Mot de passe</label>
+      <div class="pwd-wrap">
+        <input class="form-input" type="password" id="reg-pwd" placeholder="Minimum 8 caractères"/>
+        <button class="pwd-eye" onclick="togglePwd('reg-pwd',this)" tabindex="-1">👁️</button>
+      </div>
+    </div>
+    <div class="form-group"><label class="form-label">Confirmer</label><input class="form-input" type="password" id="reg-pwd2" placeholder="••••••••"/></div>
+    <button class="btn-primary" onclick="doRegister()">Créer mon compte</button>
+    <p style="text-align:center;font-size:11px;color:var(--text2);margin-top:10px;">Votre compte sera activé par l'administrateur.</p>
+  </div>
+
+  <div id="auth-forgot" style="display:none;">
+    <div class="auth-tabs"><button class="auth-tab active">Mot de passe oublié</button></div>
+    <div class="auth-alert" id="forgot-alert"></div>
+    <p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6;">Entrez votre email pour recevoir un mot de passe temporaire.</p>
+    <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" id="forgot-email"/></div>
+    <button class="btn-primary" onclick="doForgotPwd()">Récupérer mon accès</button>
+    <p style="text-align:center;font-size:11px;margin-top:10px;"><span class="auth-link" onclick="showAuthSection('login')">← Retour</span></p>
+  </div>
+</div>
+</div>
+
+<!-- ══ ADMIN ══════════════════════════════════════════════ -->
+<div class="screen" id="screen-admin">
+  <div class="admin-bar">
+    <div class="admin-bar-left">
+      <div class="admin-bar-icon">📊</div>
+      <span class="admin-bar-title">FinScan Pro — Administration</span>
+    </div>
+    <button class="btn-admin-logout" onclick="doLogout()">Déconnexion</button>
+  </div>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <input class="admin-search" type="text" id="admin-search" placeholder="🔍 Rechercher par nom, email ou institution..." oninput="renderAdmin()"/>
+      <select class="admin-filter" id="admin-filter-inst" onchange="renderAdmin()"><option value="">Toutes institutions</option></select>
+      <select class="admin-filter" id="admin-filter-status" onchange="renderAdmin()">
+        <option value="">Tous statuts</option>
+        <option value="pending">En attente</option>
+        <option value="active">Actifs</option>
+        <option value="rejected">Refusés</option>
+        <option value="expired">Expirés</option>
+        <option value="suspended">Suspendus</option>
+        <option value="deleted">Supprimés</option>
+      </select>
+      <button class="btn-refresh" onclick="renderAdmin()">🔄 Actualiser</button>
+    </div>
+
+    <div class="admin-section-title">⏳ En attente de validation</div>
+    <div class="admin-table-wrap" id="admin-pending-wrap"></div>
+
+    <div class="admin-section-title">👥 Tous les utilisateurs</div>
+    <div class="admin-table-wrap" id="admin-all-wrap"></div>
+
+    <!-- Config email -->
+    <div class="admin-card">
+      <div class="admin-section-title" style="margin-bottom:.75rem;">📧 Email expéditeur (notifications)</div>
+      <div class="form-group"><label class="form-label">Votre email Yahoo</label><input class="form-input" type="email" id="admin-email" placeholder="votre@yahoo.fr"/></div>
+      <div class="form-group"><label class="form-label">EmailJS Service ID</label><input class="form-input" type="text" id="ejs-service" placeholder="service_xxxxxxx"/></div>
+      <div class="form-group"><label class="form-label">EmailJS Template ID (validation de compte)</label><input class="form-input" type="text" id="ejs-template" placeholder="template_xxxxxxx"/></div>
+      <div class="form-group"><label class="form-label">EmailJS Template ID (mot de passe oublié)</label><input class="form-input" type="text" id="ejs-template-pwd" placeholder="template_xxxxxxx"/></div>
+      <div class="form-group"><label class="form-label">EmailJS Public Key</label><input class="form-input" type="text" id="ejs-pubkey" placeholder="xxxxxxxxxxxxxxx"/></div>
+      <button class="btn-primary" style="max-width:200px;" onclick="saveEmailConfig()">Enregistrer</button>
+      <div id="email-config-msg" style="font-size:11px;margin-top:6px;display:none;"></div>
+    </div>
+
+    <!-- Config URL API -->
+    <div class="admin-card">
+      <div class="admin-section-title" style="margin-bottom:.75rem;">🔗 URL API Excel (Render.com)</div>
+      <div style="display:flex;gap:8px;">
+        <input class="form-input" type="text" id="excel-api-url" placeholder="https://finscan-api-xxxx.onrender.com" style="flex:1;"/>
+        <button class="btn-primary" style="width:auto;white-space:nowrap;" onclick="saveExcelApiUrl()">Enregistrer</button>
+      </div>
+      <div id="excel-api-msg" style="font-size:11px;margin-top:6px;display:none;"></div>
+    </div>
+
+    <!-- Changer mdp admin -->
+    <div class="admin-card">
+      <div class="admin-section-title" style="margin-bottom:.75rem;">🔒 Changer mon mot de passe</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div class="pwd-wrap" style="flex:1;min-width:140px;">
+          <input class="form-input" type="password" id="admin-old-pwd" placeholder="Mot de passe actuel"/>
+          <button class="pwd-eye" onclick="togglePwd('admin-old-pwd',this)" tabindex="-1">👁️</button>
+        </div>
+        <div class="pwd-wrap" style="flex:1;min-width:140px;">
+          <input class="form-input" type="password" id="admin-new-pwd" placeholder="Nouveau mot de passe"/>
+          <button class="pwd-eye" onclick="togglePwd('admin-new-pwd',this)" tabindex="-1">👁️</button>
+        </div>
+        <button class="btn-primary" style="width:auto;white-space:nowrap;" onclick="changeAdminPwd()">Modifier</button>
+      </div>
+      <div id="admin-pwd-msg" style="font-size:11px;margin-top:6px;display:none;"></div>
+    </div>
+
+    <!-- Changer email admin -->
+    <div class="admin-card">
+      <div class="admin-section-title" style="margin-bottom:.75rem;">✉️ Changer mon email de connexion</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div class="pwd-wrap" style="flex:1;min-width:140px;">
+          <input class="form-input" type="password" id="admin-email-pwd" placeholder="Mot de passe actuel"/>
+          <button class="pwd-eye" onclick="togglePwd('admin-email-pwd',this)" tabindex="-1">👁️</button>
+        </div>
+        <input class="form-input" type="email" id="admin-new-email" placeholder="Nouvel email" style="flex:1;min-width:140px;"/>
+        <button class="btn-primary" style="width:auto;white-space:nowrap;" onclick="changeAdminEmail()">Modifier</button>
+      </div>
+      <div id="admin-email-msg" style="font-size:11px;margin-top:6px;display:none;"></div>
+    </div>
+
+    <!-- Test alerte email -->
+    <div class="admin-card">
+      <div class="admin-section-title" style="margin-bottom:.75rem;">📧 Tester l'alerte email de monitoring</div>
+      <p style="font-size:12px;color:var(--text2);margin-bottom:10px;">
+        Déclenche volontairement une erreur serveur pour vérifier que l'email d'alerte
+        arrive bien à l'adresse configurée dans <code>ADMIN_ALERT_EMAIL</code> sur Render.
+      </p>
+      <button class="btn-primary" style="width:auto;" onclick="testErrorAlert()">Envoyer un test</button>
+      <div id="admin-test-alert-msg" style="font-size:11px;margin-top:6px;display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ APP ════════════════════════════════════════════════ -->
+<div class="screen" id="screen-app">
+  <div class="topbar">
+    <div class="topbar-brand">
+      <div class="topbar-icon">📊</div>
+      <span class="topbar-name">FinScan Pro</span>
+      <span class="topbar-ver">V1.0</span>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-user" id="topbar-uname"></span>
+      <div class="topbar-avatar" id="topbar-avatar"></div>
+      <button class="btn-top-logout" onclick="doLogout()">Déconnexion</button>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <div class="sidebar">
+      <div class="sidebar-label">Outil</div>
+      <button class="nav-item active" id="nav-scanner" onclick="goPage('scanner',this)"><span class="ni">📄</span>Dépouillement</button>
+      <button class="nav-item" id="nav-historique" onclick="goPage('historique',this)"><span class="ni">📁</span>Historique<span class="ni-badge" id="hist-badge">0</span></button>
+      <div class="sidebar-label">Compte</div>
+      <button class="nav-item" id="nav-profil" onclick="goPage('profil',this)"><span class="ni">👤</span>Mon profil</button>
+      <div class="sidebar-bottom">
+        <div class="quota-title">📊 Quota mensuel</div>
+        <div id="quota-text" style="font-size:11px;color:var(--text);">0 / 0 analyses</div>
+        <div class="quota-bar"><div class="quota-fill" id="quota-fill" style="width:0%"></div></div>
+        <div class="quota-text" id="quota-remain"></div>
+        <div id="quota-expiry" style="font-size:10px;color:var(--text2);margin-top:4px;"></div>
+      </div>
+    </div>
+
+    <div class="app-main">
+      <!-- SCANNER -->
+      <div class="page active" id="page-scanner">
+        <div class="page-header">
+          <div class="page-title">📄 Dépouillement automatique</div>
+          <div class="page-sub">Déposez vos documents — le système extrait et remplit votre fichier Excel SYSCOHADA</div>
+        </div>
+        <div class="upload-area" id="dropzone"
+             onclick="document.getElementById('file-input-main').click()"
+             ondragover="event.preventDefault();this.classList.add('drag')"
+             ondragleave="this.classList.remove('drag')"
+             ondrop="handleDrop(event)">
+          <span class="upload-icon" id="upload-icon-main">📁</span>
+          <div class="upload-title">Déposez vos fichiers ici</div>
+          <div class="upload-hint">PDF, JPEG, PNG, Excel, Word — plusieurs fichiers acceptés</div>
+          <div class="format-pills">
+            <span class="format-pill">PDF</span><span class="format-pill">JPEG</span>
+            <span class="format-pill">PNG</span><span class="format-pill">EXCEL</span><span class="format-pill">WORD</span>
+          </div>
+        </div>
+        <input type="file" id="file-input-main" accept=".pdf,.jpg,.jpeg,.png,.xlsx,.xls,.docx,.doc,application/pdf,image/*" multiple onchange="handleFiles(this.files)"/>
+        <div class="files-list" id="files-list"></div>
+        <div class="alert-row al-err" id="scan-error" style="display:none;">⚠️ <span id="scan-error-msg"></span></div>
+        <button class="btn-analyze" id="btn-analyze" disabled onclick="doAnalyze()">
+          📊 Lancer l'extraction
+        </button>
+        <div class="progress-card" id="progress-card">
+          <div class="progress-top"><span id="prog-label">Initialisation…</span><span id="prog-pct">0%</span></div>
+          <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+          <div class="progress-steps">
+            <span class="ps" id="ps1">📁 Lecture</span>
+            <span class="ps" id="ps2">🔍 Analyse</span>
+            <span class="ps" id="ps3">⚖️ Bilan</span>
+            <span class="ps" id="ps4">📊 CR</span>
+            <span class="ps" id="ps5">💧 TFT</span>
+            <span class="ps" id="ps6">📥 Fichier</span>
+          </div>
+        </div>
+        <div class="results-card" id="results-card">
+          <div class="results-topbar">
+            <div class="rt-left">
+              <h3 id="results-title">Extraction terminée</h3>
+              <p id="results-sub"></p>
+            </div>
+            <div class="rt-actions">
+              <button class="btn-act btn-act-ghost" onclick="resetScan()">🔄 Nouveau</button>
+              <button class="btn-act btn-act-green" onclick="exportExcel()">📥 Télécharger mon Dépouillement</button>
+            </div>
+          </div>
+          <div class="stats-row" id="stats-row"></div>
+          <div id="global-alerts"></div>
+          <div class="state-tabs">
+            <button class="stab active" onclick="switchTab('bilan',this)">⚖️ Bilan <span class="cnt" id="cnt-bilan">0</span></button>
+            <button class="stab" onclick="switchTab('cr',this)">📊 Compte de résultat <span class="cnt" id="cnt-cr">0</span></button>
+            <button class="stab" onclick="switchTab('tft',this)">💧 Flux de trésorerie <span class="cnt" id="cnt-tft">0</span></button>
+            <button class="stab" onclick="switchTab('doc',this)">📄 Document original</button>
+          </div>
+          <div class="tab-pane active" id="pane-bilan"></div>
+          <div class="tab-pane" id="pane-cr"></div>
+          <div class="tab-pane" id="pane-tft"></div>
+          <div class="tab-pane" id="pane-doc"></div>
+        </div>
+      </div>
+
+      <!-- HISTORIQUE -->
+      <div class="page" id="page-historique">
+        <div class="page-header"><div class="page-title">📁 Historique</div><div class="page-sub">Vos dépouillements passés</div></div>
+        <div id="hist-container"></div>
+      </div>
+
+      <!-- PROFIL -->
+      <div class="page" id="page-profil">
+        <div class="page-header"><div class="page-title">👤 Mon profil</div></div>
+        <div class="profil-card">
+          <div class="profil-av-lg" id="profil-av"></div>
+          <div id="profil-info" style="font-size:13px;color:var(--text2);margin-bottom:1.5rem;line-height:1.8;"></div>
+          <div style="border-top:1px solid var(--gray2);padding-top:1.25rem;">
+            <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:1rem;">🔒 Modifier mon mot de passe</div>
+            <div class="form-group"><label class="form-label">Mot de passe actuel</label>
+              <div class="pwd-wrap"><input class="form-input" type="password" id="old-pwd"/><button class="pwd-eye" onclick="togglePwd('old-pwd',this)" tabindex="-1">👁️</button></div>
+            </div>
+            <div class="form-group"><label class="form-label">Nouveau mot de passe</label>
+              <div class="pwd-wrap"><input class="form-input" type="password" id="new-pwd"/><button class="pwd-eye" onclick="togglePwd('new-pwd',this)" tabindex="-1">👁️</button></div>
+            </div>
+            <div class="form-group"><label class="form-label">Confirmer</label><input class="form-input" type="password" id="new-pwd2"/></div>
+            <button class="btn-primary" onclick="changePwd()">Modifier le mot de passe</button>
+            <div id="profil-msg" style="font-size:11px;margin-top:8px;display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════
+const EXCEL_API_URL_DEFAULT = 'https://finscan-api-0upz.onrender.com';
+function getExcelApiUrl(){return (localStorage.getItem('fsp_excel_api')||EXCEL_API_URL_DEFAULT).replace(/\/+$/,'');}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+// ══════════════════════════════════════
+// DB (historique local uniquement — les comptes vivent côté serveur)
+// ══════════════════════════════════════
+const DB={
+  getHistory:uid=>JSON.parse(localStorage.getItem('fsp_hist_'+uid)||'[]'),
+  saveHistory:(uid,h)=>localStorage.setItem('fsp_hist_'+uid,JSON.stringify(h)),
+};
+
+// ══════════════════════════════════════
+// API AUTH (backend Render — comptes partagés entre tous les appareils)
+// ══════════════════════════════════════
+function getToken(){return localStorage.getItem('fsp_token')||'';}
+function setToken(t){t?localStorage.setItem('fsp_token',t):localStorage.removeItem('fsp_token');}
+function getFingerprint(){
+  let fp=localStorage.getItem('fsp_fingerprint');
+  if(!fp){fp='fp_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,10);localStorage.setItem('fsp_fingerprint',fp);}
+  return fp;
+}
+
+async function apiCall(path,opts={}){
+  const token=getToken();
+  const headers=Object.assign({'Content-Type':'application/json'},opts.headers||{});
+  if(token)headers['Authorization']='Bearer '+token;
+  const resp=await fetch(getExcelApiUrl()+path,Object.assign({},opts,{headers}));
+  let data;
+  try{data=await resp.json();}catch(e){data={};}
+  if(!resp.ok)throw Object.assign(new Error(data.error||('Erreur serveur ['+resp.status+']')),{code:data.code,status:resp.status});
+  return data;
+}
+
+function resetApp(){
+  if(!confirm('Effacer les données locales de ce navigateur (clé API, session, historique) ? Les comptes restent intacts sur le serveur.'))return;
+  const hist=Object.keys(localStorage).filter(k=>k.startsWith('fsp_'));
+  hist.forEach(k=>localStorage.removeItem(k));
+  location.reload();
+}
+
+// ══════════════════════════════════════
+// SCREENS
+// ══════════════════════════════════════
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+}
+function scrollToSection(id){
+  document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
+}
+
+// ══════════════════════════════════════
+// AUTH
+// ══════════════════════════════════════
+let currentUser=null;
+
+function showAuthSection(section,btn){
+  ['auth-login','auth-register','auth-forgot'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('auth-'+section).style.display='';
+}
+
+function togglePwd(inputId,btn){
+  const inp=document.getElementById(inputId);
+  if(inp.type==='password'){inp.type='text';btn.textContent='🙈';}
+  else{inp.type='password';btn.textContent='👁️';}
+}
+
+function showAlert(id,msg,type='error'){
+  const el=document.getElementById(id);
+  if(!el){console.error('Element not found:',id);return;}
+  el.textContent=msg;
+  el.className='auth-alert '+type;
+  el.style.cssText='display:block !important';
+  el.style.display='block';
+  // Scroll vers l'alerte
+  el.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+async function doLogin(){
+  const email=document.getElementById('login-email').value.trim().toLowerCase();
+  const pwd=document.getElementById('login-pwd').value;
+  if(!email||!pwd)return showAlert('login-alert','Remplissez tous les champs.');
+  const btn=document.getElementById('btn-login');
+  btn.disabled=true;
+  try{
+    const data=await apiCall('/api/login',{method:'POST',body:JSON.stringify({email,password:pwd,fingerprint:getFingerprint()})});
+    setToken(data.token);currentUser=data.user;enterApp(data.user);
+    startSessionWatch();
+  }catch(e){
+    const type=(e.code==='pending'||e.code==='expired'||e.code==='suspended')?'warning':'error';
+    showAlert('login-alert',e.message,type);
+  }finally{btn.disabled=false;}
+}
+async function doRegister(){
+  const prenom=document.getElementById('reg-prenom').value.trim();
+  const nom=document.getElementById('reg-nom').value.trim();
+  const email=document.getElementById('reg-email').value.trim().toLowerCase();
+  const inst=document.getElementById('reg-institution').value.trim();
+  const pwd=document.getElementById('reg-pwd').value;
+  const pwd2=document.getElementById('reg-pwd2').value;
+  if(!prenom||!nom||!email||!inst||!pwd)return showAlert('register-alert','Tous les champs sont obligatoires.');
+  if(pwd.length<8)return showAlert('register-alert','Mot de passe : 8 caractères minimum.');
+  if(pwd!==pwd2)return showAlert('register-alert','Les mots de passe ne correspondent pas.');
+  try{
+    await apiCall('/api/register',{method:'POST',body:JSON.stringify({prenom,nom,email,institution:inst,password:pwd})});
+    showAlert('register-alert','Compte créé ! En attente de validation.','success');
+  }catch(e){showAlert('register-alert',e.message);}
+}
+
+async function doForgotPwd(){
+  const email=document.getElementById('forgot-email').value.trim().toLowerCase();
+  if(!email)return showAlert('forgot-alert','Entrez votre email.');
+  try{
+    const data=await apiCall('/api/forgot-password',{method:'POST',body:JSON.stringify({email})});
+    if(data.sent){
+      showAlert('forgot-alert','Un email contenant votre mot de passe temporaire vous a été envoyé.','success');
+      return;
+    }
+    const sent=await sendForgotPwdEmail(email,data.prenom,data.nom,data.tempPassword);
+    if(sent){
+      showAlert('forgot-alert','Un email contenant votre mot de passe temporaire vous a été envoyé.','success');
+    }else{
+      showAlert('forgot-alert','Mot de passe temporaire : '+data.tempPassword+'\n\nConnectez-vous puis changez-le.','success');
+    }
+  }catch(e){showAlert('forgot-alert',e.message,'error');}
+}
+
+async function sendForgotPwdEmail(email,prenom,nom,tempPassword){
+  const cfg=JSON.parse(localStorage.getItem('fsp_email_config')||'{}');
+  if(!cfg.service||!cfg.templatePwd||!cfg.pubkey)return false;
+  try{
+    emailjs.init(cfg.pubkey);
+    await emailjs.send(cfg.service,cfg.templatePwd,{
+      to_email:email,
+      to_name:(prenom||'')+' '+(nom||''),
+      temp_password:tempPassword,
+      login_url:'https://finscan-pro-f1d1soum.netlify.app',
+      from_name:'FinScan Pro'
+    });
+    return true;
+  }catch(e){console.log('Erreur envoi email mot de passe oublié:',e);return false;}
+}
+
+async function doLogout(){
+  scanGeneration++;
+  stopSessionWatch();
+  try{await apiCall('/api/logout',{method:'POST'});}catch(e){}
+  setToken(null);currentUser=null;
+  showScreen('auth');
+  document.getElementById('login-email').value='';
+  document.getElementById('login-pwd').value='';
+  document.getElementById('login-alert').style.display='none';
+  extractedData=null;uploadedFiles=[];
+}
+
+let sessionWatchTimer=null;
+function startSessionWatch(){
+  stopSessionWatch();
+  sessionWatchTimer=setInterval(async()=>{
+    try{await apiCall('/api/me');}
+    catch(e){
+      if(e.code==='session_replaced'){
+        scanGeneration++;
+        stopSessionWatch();
+        setToken(null);currentUser=null;
+        showScreen('auth');
+        showAlert('login-alert',e.message,'warning');
+      }
+    }
+  },30000);
+}
+function stopSessionWatch(){
+  if(sessionWatchTimer){clearInterval(sessionWatchTimer);sessionWatchTimer=null;}
+}
+
+function enterApp(user){
+  try{
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  if(user.role==='admin'){
+    document.getElementById('screen-admin').classList.add('active');
+    renderAdmin();
+  }else{
+    document.getElementById('screen-app').classList.add('active');
+    document.getElementById('topbar-uname').textContent=user.prenom+' '+user.nom;
+    document.getElementById('topbar-avatar').textContent=(user.prenom[0]||'')+(user.nom[0]||'');
+    document.getElementById('profil-av').textContent=(user.prenom[0]||'')+(user.nom[0]||'');
+    document.getElementById('profil-info').innerHTML=
+      '<strong>'+esc(user.prenom)+' '+esc(user.nom)+'</strong><br>'+esc(user.email)+'<br>'+esc(user.institution);
+    updateQuota(user);renderHistory(user.id);
+    goPage('scanner',document.getElementById('nav-scanner'));
+  }
+  }catch(e){console.error('enterApp error:',e);showAlert('login-alert','Erreur: '+e.message);}
+}
+
+// ══════════════════════════════════════
+// ADMIN
+// ══════════════════════════════════════
+let adminUsersCache=[];
+
+async function renderAdmin(){
+  try{
+    const data=await apiCall('/api/admin/users');
+    adminUsersCache=data.users;
+  }catch(e){
+    document.getElementById('admin-pending-wrap').innerHTML=
+      '<div style="padding:1.5rem;text-align:center;color:var(--red);font-size:12px;">Erreur de chargement : '+esc(e.message)+'</div>';
+    return;
+  }
+  const search=(document.getElementById('admin-search')?.value||'').toLowerCase();
+  const filterInst=document.getElementById('admin-filter-inst')?.value||'';
+  const filterStatus=document.getElementById('admin-filter-status')?.value||'';
+  const allUsers=adminUsersCache;
+
+  // Remplir filtre institution
+  const insts=[...new Set(allUsers.map(u=>u.institution))].sort();
+  const instSelect=document.getElementById('admin-filter-inst');
+  const cur=instSelect.value;
+  instSelect.innerHTML='<option value="">Toutes institutions</option>'+insts.map(i=>`<option value="${esc(i)}"${i===cur?' selected':''}>${esc(i)}</option>`).join('');
+
+  const filtered=allUsers.filter(u=>{
+    const ms=!search||(u.prenom+' '+u.nom+' '+u.email+' '+u.institution).toLowerCase().includes(search);
+    const mi=!filterInst||u.institution===filterInst;
+    const mst=!filterStatus||u.status===filterStatus;
+    return ms&&mi&&mst;
+  }).sort((a,b)=>a.institution.localeCompare(b.institution)||a.nom.localeCompare(b.nom));
+
+  const pending=filtered.filter(u=>u.status==='pending');
+  const others=filtered.filter(u=>u.status!=='pending');
+
+  // Pending
+  document.getElementById('admin-pending-wrap').innerHTML=pending.length===0
+    ?'<div style="padding:1.5rem;text-align:center;color:var(--text2);font-size:12px;">✅ Aucun compte en attente</div>'
+    :`<table><thead><tr><th>Nom</th><th>Email</th><th>Institution</th><th>Date</th><th>Actions</th></tr></thead><tbody>
+    ${pending.map(u=>`<tr>
+      <td><strong>${esc(u.prenom)} ${esc(u.nom)}</strong></td>
+      <td>${esc(u.email)}</td><td>${esc(u.institution)}</td>
+      <td>${new Date(u.createdAt).toLocaleDateString('fr-FR')}</td>
+      <td style="display:flex;gap:5px;flex-wrap:wrap;">
+        <button class="btn-sm btn-approve" onclick="openValidateModal('${u.id}')">✓ Valider</button>
+        <button class="btn-sm btn-reject" onclick="rejectUser('${u.id}')">✗ Refuser</button>
+      </td>
+    </tr>`).join('')}</tbody></table>`;
+
+  // All users
+  document.getElementById('admin-all-wrap').innerHTML=others.length===0
+    ?'<div style="padding:1.5rem;text-align:center;color:var(--text2);font-size:12px;">Aucun utilisateur</div>'
+    :`<table><thead><tr><th>Nom</th><th>Email</th><th>Institution</th><th>Statut</th><th>Quota</th><th>Expiration</th><th>Dernière connexion</th><th>Actions</th></tr></thead><tbody>
+    ${others.map(u=>`<tr>
+      <td><strong>${esc(u.prenom)} ${esc(u.nom)}</strong></td>
+      <td>${esc(u.email)}</td>
+      <td>${esc(u.institution)}</td>
+      <td><span class="badge badge-${u.status}">${{active:'Actif',rejected:'Refusé',expired:'Expiré',pending:'En attente',suspended:'Suspendu',deleted:'Supprimé'}[u.status]||u.status}</span></td>
+      <td>${u.usedQuota||0} / ${u.quota||50}</td>
+      <td>${u.expiry?new Date(u.expiry).toLocaleDateString('fr-FR'):'—'}</td>
+      <td style="font-size:10px;">${u.lastLoginAt?new Date(u.lastLoginAt).toLocaleString('fr-FR'):'—'}${u.lastLoginIp?'<br>IP: '+esc(u.lastLoginIp):''}</td>
+      <td style="display:flex;gap:5px;flex-wrap:wrap;">
+        ${u.status==='active'
+          ?`<button class="btn-sm btn-reject" onclick="rejectUser('${u.id}')">Désactiver</button>
+             <button class="btn-sm" style="background:var(--navy-bg);color:var(--navy);" onclick="openEditModal('${u.id}')">✏️ Modifier</button>`
+          :`<button class="btn-sm btn-approve" onclick="openValidateModal('${u.id}')">Réactiver</button>`
+        }
+        ${u.status!=='deleted'
+          ?`<button class="btn-sm" style="background:#fee2e2;color:#dc2626;" onclick="deleteUser('${u.id}')">🗑️ Supprimer</button>`
+          :''
+        }
+      </td>
+    </tr>`).join('')}</tbody></table>`;
+
+  // Pré-remplir configs
+  const savedUrl=localStorage.getItem('fsp_excel_api');
+  if(savedUrl&&document.getElementById('excel-api-url'))document.getElementById('excel-api-url').value=savedUrl;
+  const cfg=JSON.parse(localStorage.getItem('fsp_email_config')||'{}');
+  if(cfg.email&&document.getElementById('admin-email'))document.getElementById('admin-email').value=cfg.email;
+  if(cfg.service)document.getElementById('ejs-service').value=cfg.service;
+  if(cfg.template)document.getElementById('ejs-template').value=cfg.template;
+  if(cfg.templatePwd)document.getElementById('ejs-template-pwd').value=cfg.templatePwd;
+  if(cfg.pubkey)document.getElementById('ejs-pubkey').value=cfg.pubkey;
+}
+
+// Modal validation avec quota + période
+function openValidateModal(userId){
+  const u=adminUsersCache.find(x=>x.id===userId);
+  if(!u)return;
+
+  // Créer le modal
+  const existing=document.getElementById('validate-modal');
+  if(existing)existing.remove();
+
+  const modal=document.createElement('div');
+  modal.id='validate-modal';
+  modal.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:9999;display:flex;align-items:center;justify-content:center;';
+  modal.innerHTML=`
+    <div style="background:white;border-radius:12px;padding:24px;width:360px;max-width:90vw;box-shadow:0 20px 40px rgba(0,0,0,.3);">
+      <h3 style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">Valider le compte</h3>
+      <p style="font-size:12px;color:var(--text2);margin-bottom:16px;">${esc(u.prenom)} ${esc(u.nom)} — ${esc(u.institution)}</p>
+
+      <div class="form-group">
+        <label class="form-label">Quota d'analyses mensuelles</label>
+        <select class="form-input" id="modal-quota">
+          <option value="10" ${(u.quota||50)===10?'selected':''}>10 analyses / mois (période d'essai)</option>
+          <option value="50" ${(u.quota||50)===50?'selected':''}>50 analyses / mois</option>
+          <option value="100" ${(u.quota||50)===100?'selected':''}>100 analyses / mois</option>
+          <option value="150" ${(u.quota||50)===150?'selected':''}>150 analyses / mois</option>
+          <option value="200" ${(u.quota||50)===200?'selected':''}>200 analyses / mois</option>
+          <option value="300" ${(u.quota||50)===300?'selected':''}>300 analyses / mois</option>
+          <option value="500" ${(u.quota||50)===500?'selected':''}>500 analyses / mois</option>
+          <option value="9999">Illimité</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Durée de l'abonnement</label>
+        <select class="form-input" id="modal-duree">
+          <option value="1">1 mois</option>
+          <option value="2">2 mois</option>
+          <option value="3">3 mois</option>
+          <option value="6">6 mois</option>
+          <option value="12">12 mois</option>
+          <option value="0">Sans expiration</option>
+        </select>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:16px;">
+        <button class="btn-primary" style="flex:1;" onclick="validateUser('${userId}')">✓ Valider et activer</button>
+        <button style="padding:10px 16px;border:2px solid var(--gray2);border-radius:6px;background:transparent;cursor:pointer;font-size:13px;" onclick="document.getElementById('validate-modal').remove()">Annuler</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+}
+
+function openEditModal(userId){
+  openValidateModal(userId); // Même modal pour édition
+}
+
+async function validateUser(userId){
+  const quota=parseInt(document.getElementById('modal-quota').value);
+  const months=parseInt(document.getElementById('modal-duree').value);
+  try{
+    const data=await apiCall('/api/admin/users/'+userId+'/validate',{method:'POST',body:JSON.stringify({quota,months})});
+    sendValidationEmail(data.user);
+  }catch(e){alert('Erreur : '+e.message);}
+  document.getElementById('validate-modal')?.remove();
+  renderAdmin();
+}
+
+async function rejectUser(id){
+  try{await apiCall('/api/admin/users/'+id+'/reject',{method:'POST'});}
+  catch(e){alert('Erreur : '+e.message);}
+  renderAdmin();
+}
+
+async function deleteUser(id){
+  const u=adminUsersCache.find(x=>x.id===id);
+  const label=u?(u.prenom+' '+u.nom+' ('+u.email+')'):'ce compte';
+  if(!confirm('Supprimer définitivement '+label+' ? Cette action est irréversible.'))return;
+  try{await apiCall('/api/admin/users/'+id+'/delete',{method:'POST'});}
+  catch(e){alert('Erreur : '+e.message);}
+  renderAdmin();
+}
+
+function saveExcelApiUrl(){
+  const url=document.getElementById('excel-api-url').value.trim();
+  if(!url.startsWith('https://'))return showAdminMsg('excel-api-msg','URL invalide','var(--red)');
+  localStorage.setItem('fsp_excel_api',url);
+  showAdminMsg('excel-api-msg','✅ URL enregistrée','var(--green)');
+}
+
+function saveEmailConfig(){
+  const cfg={
+    email:document.getElementById('admin-email').value.trim(),
+    service:document.getElementById('ejs-service').value.trim(),
+    template:document.getElementById('ejs-template').value.trim(),
+    templatePwd:document.getElementById('ejs-template-pwd').value.trim(),
+    pubkey:document.getElementById('ejs-pubkey').value.trim()
+  };
+  localStorage.setItem('fsp_email_config',JSON.stringify(cfg));
+  if(cfg.pubkey)emailjs.init(cfg.pubkey);
+  showAdminMsg('email-config-msg','✅ Configuration email enregistrée','var(--green)');
+}
+
+function showAdminMsg(id,msg,color){
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.textContent=msg;el.style.color=color;el.style.display='block';
+  setTimeout(()=>el.style.display='none',4000);
+}
+
+async function changeAdminPwd(){
+  const old=document.getElementById('admin-old-pwd').value;
+  const pwd=document.getElementById('admin-new-pwd').value;
+  if(!pwd||pwd.length<8)return showAdminMsg('admin-pwd-msg','Minimum 8 caractères','var(--red)');
+  try{
+    const data=await apiCall('/api/change-password',{method:'POST',body:JSON.stringify({oldPassword:old,newPassword:pwd})});
+    if(data.token)setToken(data.token);
+    showAdminMsg('admin-pwd-msg','✅ Mot de passe modifié','var(--green)');
+    document.getElementById('admin-old-pwd').value='';
+    document.getElementById('admin-new-pwd').value='';
+  }catch(e){showAdminMsg('admin-pwd-msg',e.message,'var(--red)');}
+}
+
+async function changeAdminEmail(){
+  const pwd=document.getElementById('admin-email-pwd').value;
+  const newEmail=document.getElementById('admin-new-email').value.trim();
+  if(!newEmail||!newEmail.includes('@'))return showAdminMsg('admin-email-msg','Email invalide','var(--red)');
+  try{
+    const data=await apiCall('/api/change-email',{method:'POST',body:JSON.stringify({password:pwd,newEmail})});
+    currentUser=data.user;
+    showAdminMsg('admin-email-msg','✅ Email modifié — utilisez '+esc(newEmail)+' pour vous reconnecter la prochaine fois','var(--green)');
+    document.getElementById('admin-email-pwd').value='';
+    document.getElementById('admin-new-email').value='';
+  }catch(e){showAdminMsg('admin-email-msg',e.message,'var(--red)');}
+}
+
+async function testErrorAlert(){
+  try{
+    const data=await apiCall('/api/admin/test-error-alert',{method:'POST'});
+    showAdminMsg('admin-test-alert-msg','✅ Email envoyé avec succès à '+esc(data.sentTo)+' — vérifiez votre boîte mail.','var(--green)');
+  }catch(e){
+    showAdminMsg('admin-test-alert-msg','❌ '+e.message,'var(--red)');
+  }
+}
+
+// ══════════════════════════════════════
+// EMAIL (EmailJS + Yahoo)
+// ══════════════════════════════════════
+function sendValidationEmail(user){
+  const cfg=JSON.parse(localStorage.getItem('fsp_email_config')||'{}');
+  if(!cfg.service||!cfg.template||!cfg.pubkey){
+    console.log('Email non configuré - notification ignorée');
+    return;
+  }
+  try{
+    emailjs.init(cfg.pubkey);
+    const expiry=user.expiry?new Date(user.expiry).toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'}):'Sans expiration';
+    emailjs.send(cfg.service,cfg.template,{
+      to_email:user.email,
+      to_name:user.prenom+' '+user.nom,
+      institution:user.institution,
+      quota:user.quota>=9999?'Illimité':user.quota+' analyses/mois',
+      expiry:expiry,
+      login_url:'https://finscan-pro-f1d1soum.netlify.app',
+      from_name:'FinScan Pro'
+    }).then(()=>console.log('Email envoyé à '+user.email))
+      .catch(e=>console.log('Erreur email:',e));
+  }catch(e){console.log('EmailJS erreur:',e);}
+}
+
+// ══════════════════════════════════════
+// APP NAV
+// ══════════════════════════════════════
+function goPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  if(id==='historique'&&currentUser)renderHistory(currentUser.id);
+}
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ══════════════════════════════════════
+// QUOTA
+// ══════════════════════════════════════
+function updateQuota(user){
+  const quota=user.quota||50;
+  const used=user.usedQuota||0;
+  const remain=quota>=9999?'Illimité':Math.max(0,quota-used)+' restantes';
+  document.getElementById('quota-text').textContent=quota>=9999?'Illimité':`${used} / ${quota} analyses`;
+  document.getElementById('quota-fill').style.width=quota>=9999?'30%':Math.min(100,used/quota*100)+'%';
+  document.getElementById('quota-remain').textContent=remain;
+  if(user.expiry){
+    const exp=new Date(user.expiry);
+    const days=Math.ceil((exp-new Date())/(1000*60*60*24));
+    document.getElementById('quota-expiry').textContent=days>0?`Expire dans ${days} jour${days>1?'s':''}`:'Abonnement expiré';
+    document.getElementById('quota-expiry').style.color=days<=7?'var(--red)':'var(--text2)';
+  }
+}
+
+async function incrQuota(){
+  // Le quota est désormais incrémenté côté serveur, à l'intérieur même de
+  // /api/analyze (impossible à contourner) : ici on se contente de rafraîchir
+  // l'affichage avec la valeur réelle, sans jamais l'incrémenter nous-mêmes.
+  if(!currentUser)return;
+  try{
+    const data=await apiCall('/api/me');
+    currentUser=data.user;
+    updateQuota(currentUser);
+  }catch(e){console.error('incrQuota error:',e);}
+}
+
+// ══════════════════════════════════════
+// FILE UPLOAD
+// ══════════════════════════════════════
+let uploadedFiles=[],extractedData=null,scanGeneration=0;
+
+function handleDrop(e){e.preventDefault();document.getElementById('dropzone').classList.remove('drag');handleFiles(e.dataTransfer.files);}
+function handleFiles(files){
+  const ok=/\.(pdf|jpg|jpeg|png|xlsx|xls|docx|doc)$/i;
+  Array.from(files).forEach(f=>{
+    if(f.type.startsWith('image/')||f.type==='application/pdf'||f.name.match(ok))
+      if(!uploadedFiles.find(x=>x.name===f.name&&x.size===f.size))uploadedFiles.push(f);
+  });
+  renderFiles();
+}
+function removeFile(i){uploadedFiles.splice(i,1);renderFiles();}
+function renderFiles(){
+  const icons={'application/pdf':'📄','image/jpeg':'🖼️','image/png':'🖼️','image/jpg':'🖼️'};
+  document.getElementById('files-list').innerHTML=uploadedFiles.map((f,i)=>`
+    <div class="file-item">
+      <span class="fi-icon">${icons[f.type]||'📄'}</span>
+      <div class="fi-info">
+        <div class="fi-name" title="${esc(f.name)}">${esc(f.name)}</div>
+        <div class="fi-meta">${(f.size/1024).toFixed(0)} Ko</div>
+      </div>
+      <button class="fi-remove" onclick="removeFile(${i})">×</button>
+    </div>`).join('');
+  document.getElementById('btn-analyze').disabled=uploadedFiles.length===0;
+  document.getElementById('upload-icon-main').textContent=uploadedFiles.length>0?'✅':'📁';
+  document.getElementById('scan-error').style.display='none';
+}
+
+function toBase64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=()=>rej(new Error('Lecture impossible'));r.readAsDataURL(file);});}
+async function fileToBlock(file){
+  const b64=await toBase64(file);
+  if(file.type==='application/pdf'||file.name.endsWith('.pdf'))return{type:'document',source:{type:'base64',media_type:'application/pdf',data:b64}};
+  if(file.type.startsWith('image/'))return{type:'image',source:{type:'base64',media_type:file.type==='image/jpg'?'image/jpeg':file.type,data:b64}};
+  return{type:'document',source:{type:'base64',media_type:'application/pdf',data:b64}};
+}
+
+// ══════════════════════════════════════
+// PROGRESS
+// ══════════════════════════════════════
+function setProgress(pct,label,stepIdx){
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=label;
+  document.getElementById('prog-pct').textContent=pct+'%';
+  for(let i=1;i<=6;i++){const el=document.getElementById('ps'+i);el.className='ps'+(i<stepIdx?' done':i===stepIdx?' active':'');}
+}
+
+// ══════════════════════════════════════
+// PROMPT PRÉCIS SYSCOHADA
+// ══════════════════════════════════════
+const PROMPT=`Tu es expert-comptable SYSCOHADA (UEMOA / Afrique de l'Ouest).
+Analyse TOUS les documents fournis avec une PRÉCISION ABSOLUE — zéro erreur acceptable.
+
+══════════════════════════════════════════════════
+RÈGLES ABSOLUES — LIRE AVANT TOUT
+══════════════════════════════════════════════════
+
+RÈGLE 1 — LECTURE DES NOMBRES (SOURCE PRINCIPALE D'ERREURS) :
+Les espaces dans les nombres SYSCOHADA sont des séparateurs de milliers.
+EXEMPLES OBLIGATOIRES À RETENIR :
+  "1 454 024 379" → 1454024379 (un milliard quatre cent cinquante-quatre millions...)
+  "846 259 181"   → 846259181
+  "770 744 718"   → 770744718
+  "200 000 000"   → 200000000
+  "128 902 286"   → 128902286
+  "914 916 734"   → 914916734
+JAMAIS "454 024 379" ni "259 181" ni "718" — c'est TOUJOURS le nombre COMPLET.
+Pour chaque nombre lu, COMPTE le nombre de chiffres :
+  - 9 chiffres = centaines de millions (ex: 846 259 181)
+  - 10 chiffres = milliards (ex: 1 454 024 379)
+
+RÈGLE 2 — TOTAUX vs POSTES INDIVIDUELS :
+Les refs en MAJUSCULES combinées (AZ, BZ, BG, BK, BT, CP, DD, DF, DP, DT, XA, XB, XC, XD, XE, XF, XG, XH, XI, ZB, ZC, ZD, ZE, ZF, ZG, ZH) sont des TOTAUX CALCULÉS.
+NE JAMAIS les reporter dans le JSON. Ils servent uniquement à VÉRIFIER tes données.
+
+RÈGLE 3 — DURÉE DE L'EXERCICE :
+Si la durée est 18 mois ou autre (pas 12), noter quand même l'exercice normalement.
+N = exercice le plus récent, N-1 = précédent, N-2 = encore avant.
+
+RÈGLE 4 — CHARGES NÉGATIVES AU CR :
+Toutes les charges au CR sont en NÉGATIF dans le JSON.
+RA, RC, RE, RG, RH, RI, RJ, RK, RL, RM, RN, RO, RP, RQ, RS → valeurs NÉGATIVES.
+
+RÈGLE 5 — VÉRIFICATION OBLIGATOIRE AVANT RÉPONSE :
+1. Recalcule le total actif net N = somme(brut_n - amort_n) pour tous les postes actif
+   → doit correspondre au total BZ visible dans le document
+2. CA = TC + TD (ou TA si négoce) → doit correspondre au XB du document
+3. Résultat net = doit correspondre au XI du document
+Si écart > 1% → relire les postes concernés digit par digit
+IMPORTANT : effectue TOUTE cette vérification EN INTERNE, silencieusement.
+N'écris JAMAIS ce raisonnement, ces recalculs ou ces comparaisons dans ta
+réponse — seul le JSON final doit apparaître. Écrire ce travail de
+vérification dans la réponse gaspille de la place et risque de couper la
+réponse avant la fin du JSON.
+
+══════════════════════════════════════════════════
+POSTES À EXTRAIRE
+══════════════════════════════════════════════════
+
+ACTIF BILAN (brut_n, amort_n = exercice N ; net_n1 = N-1 ; net_n2 = N-2) :
+AE=Frais développement | AF=Brevets/licences/logiciels | AG=Fonds commercial
+AH=Autres immos incorporelles | AJ=Terrains | AK=Bâtiments
+AL=Aménagements/agencements | AM=Matériel/mobilier/actifs bio | AN=Matériel transport
+AP=Avances sur immobilisations | AR=Titres participation | AS=Autres immos financières
+BA=Actif circulant HAO | BB=Stocks et encours | BH=Fournisseurs avances versées
+BI=Clients | BJ=Autres créances | BQ=Titres placement
+BR=Valeurs à encaisser | BS=Banques/chèques/caisse | BU=Écart conversion actif
+
+PASSIF BILAN (net_n = N ; net_n1 = N-1 ; net_n2 = N-2) :
+CA=Capital | CB=Apporteurs capital non appelé | CD=Primes capital
+CE=Écarts réévaluation | CF=Réserves indisponibles | CG=Réserves libres
+CH=Report à nouveau | CJ=Résultat net exercice | CL=Subventions investissement
+CM=Provisions réglementées | DA=Emprunts dettes financières | DB=Dettes location-acquisition
+DC=Provisions risques et charges | DH=Dettes circulantes HAO | DI=Clients avances reçues
+DJ=Fournisseurs exploitation | DK=Dettes fiscales sociales | DM=Autres dettes
+DN=Provisions risques CT | DQ=Banques crédits escompte | DR=Banques établissements financiers
+DV=Écart conversion passif
+
+CR (n=N, n1=N-1, n2=N-2 ; charges en NÉGATIF) :
+TA=Ventes marchandises | RA=Achats marchandises | RB=Variation stocks march
+TB=Ventes produits fabriqués | TC=Travaux services vendus | TD=Produits accessoires
+TE=Production stockée | TF=Production immobilisée | TG=Subventions exploitation
+TH=Autres produits | TI=Transferts charges exploitation | RC=Achats matières premières
+RD=Variation stocks matières | RE=Autres achats | RF=Variation stocks appros
+RG=Transports | RH=Services extérieurs | RI=Impôts taxes | RJ=Autres charges
+RK=Charges personnel | TJ=Reprises amort/prov | RL=Dotations amort/prov
+TK=Revenus financiers | TL=Reprises prov financières | TM=Transferts charges fin
+RM=Frais financiers | RN=Dotations prov financières | TN=Produits cessions immos
+TO=Autres produits HAO | RO=Valeurs comptables cessions | RP=Autres charges HAO
+RQ=Participation travailleurs | RS=Impôts résultat
+
+TFT (n=N, n1=N-1, n2=N-2) :
+ZA=Trésorerie nette 1er janvier | FA=CAFG | FB=Variation actif circulant HAO
+FC=Variation stocks | FD=Variation créances | FE=Variation passif circulant
+FF=Acquisitions immos incorporelles | FG=Acquisitions immos corporelles
+FH=Acquisitions immos financières | FI=Cessions immos financières
+FJ=Cessions immos incorporelles/corporelles | FK=Augmentations capital
+FL=Subventions investissement | FM=Prélèvements capital | FN=Dividendes
+FO=Emprunts reçus | FP=Autres dettes financières | FQ=Remboursements emprunts
+
+══════════════════════════════════════════════════
+FORMAT JSON (RESPECTER EXACTEMENT)
+══════════════════════════════════════════════════
+
+Retourne UNIQUEMENT ce JSON, sans texte avant ni après, sans balises markdown,
+sans explication, sans résumé, sans note de vérification. Le premier
+caractère de ta réponse doit être { et le dernier caractère doit être }.
+Rien d'autre ne doit apparaître dans la réponse :
+{"entreprise":"","exercice_n":"","exercice_n1":"","exercice_n2":"","date_n":"31/12/XXXX","date_n1":"31/12/XXXX","date_n2":"31/12/XXXX",
+"bilan_actif":[
+{"ref":"AE","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AF","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AG","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AH","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AJ","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AK","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AL","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AM","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AN","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AP","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AR","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"AS","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BA","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BB","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BH","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BI","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BJ","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BQ","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BR","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BS","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0},
+{"ref":"BU","brut_n":0,"amort_n":0,"net_n1":0,"net_n2":0}],
+"bilan_passif":[
+{"ref":"CA","net_n":0,"net_n1":0,"net_n2":0},{"ref":"CB","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"CD","net_n":0,"net_n1":0,"net_n2":0},{"ref":"CE","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"CF","net_n":0,"net_n1":0,"net_n2":0},{"ref":"CG","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"CH","net_n":0,"net_n1":0,"net_n2":0},{"ref":"CJ","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"CL","net_n":0,"net_n1":0,"net_n2":0},{"ref":"CM","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"DA","net_n":0,"net_n1":0,"net_n2":0},{"ref":"DB","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"DC","net_n":0,"net_n1":0,"net_n2":0},{"ref":"DH","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"DI","net_n":0,"net_n1":0,"net_n2":0},{"ref":"DJ","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"DK","net_n":0,"net_n1":0,"net_n2":0},{"ref":"DM","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"DN","net_n":0,"net_n1":0,"net_n2":0},{"ref":"DQ","net_n":0,"net_n1":0,"net_n2":0},
+{"ref":"DR","net_n":0,"net_n1":0,"net_n2":0},{"ref":"DV","net_n":0,"net_n1":0,"net_n2":0}],
+"cr":[
+{"ref":"TA","n":0,"n1":0,"n2":0},{"ref":"RA","n":0,"n1":0,"n2":0},{"ref":"RB","n":0,"n1":0,"n2":0},
+{"ref":"TB","n":0,"n1":0,"n2":0},{"ref":"TC","n":0,"n1":0,"n2":0},{"ref":"TD","n":0,"n1":0,"n2":0},
+{"ref":"TE","n":0,"n1":0,"n2":0},{"ref":"TF","n":0,"n1":0,"n2":0},{"ref":"TG","n":0,"n1":0,"n2":0},
+{"ref":"TH","n":0,"n1":0,"n2":0},{"ref":"TI","n":0,"n1":0,"n2":0},{"ref":"RC","n":0,"n1":0,"n2":0},
+{"ref":"RD","n":0,"n1":0,"n2":0},{"ref":"RE","n":0,"n1":0,"n2":0},{"ref":"RF","n":0,"n1":0,"n2":0},
+{"ref":"RG","n":0,"n1":0,"n2":0},{"ref":"RH","n":0,"n1":0,"n2":0},{"ref":"RI","n":0,"n1":0,"n2":0},
+{"ref":"RJ","n":0,"n1":0,"n2":0},{"ref":"RK","n":0,"n1":0,"n2":0},{"ref":"TJ","n":0,"n1":0,"n2":0},
+{"ref":"RL","n":0,"n1":0,"n2":0},{"ref":"TK","n":0,"n1":0,"n2":0},{"ref":"TL","n":0,"n1":0,"n2":0},
+{"ref":"TM","n":0,"n1":0,"n2":0},{"ref":"RM","n":0,"n1":0,"n2":0},{"ref":"RN","n":0,"n1":0,"n2":0},
+{"ref":"TN","n":0,"n1":0,"n2":0},{"ref":"TO","n":0,"n1":0,"n2":0},{"ref":"RO","n":0,"n1":0,"n2":0},
+{"ref":"RP","n":0,"n1":0,"n2":0},{"ref":"RQ","n":0,"n1":0,"n2":0},{"ref":"RS","n":0,"n1":0,"n2":0}],
+"tft":[
+{"ref":"ZA","n":0,"n1":0,"n2":0},{"ref":"FA","n":0,"n1":0,"n2":0},{"ref":"FB","n":0,"n1":0,"n2":0},
+{"ref":"FC","n":0,"n1":0,"n2":0},{"ref":"FD","n":0,"n1":0,"n2":0},{"ref":"FE","n":0,"n1":0,"n2":0},
+{"ref":"FF","n":0,"n1":0,"n2":0},{"ref":"FG","n":0,"n1":0,"n2":0},{"ref":"FH","n":0,"n1":0,"n2":0},
+{"ref":"FI","n":0,"n1":0,"n2":0},{"ref":"FJ","n":0,"n1":0,"n2":0},{"ref":"FK","n":0,"n1":0,"n2":0},
+{"ref":"FL","n":0,"n1":0,"n2":0},{"ref":"FM","n":0,"n1":0,"n2":0},{"ref":"FN","n":0,"n1":0,"n2":0},
+{"ref":"FO","n":0,"n1":0,"n2":0},{"ref":"FP","n":0,"n1":0,"n2":0},{"ref":"FQ","n":0,"n1":0,"n2":0}],
+"alertes":[]}`;
+
+// ══════════════════════════════════════
+// ANALYZE
+// ══════════════════════════════════════
+async function doAnalyze(){
+  if(!currentUser)return;
+  // Vérif quota
+  const quota=currentUser.quota||50;
+  const used=currentUser.usedQuota||0;
+  if(quota<9999&&used>=quota){
+    document.getElementById('scan-error').style.display='flex';
+    document.getElementById('scan-error-msg').textContent='Quota mensuel atteint. Contactez votre administrateur.';
+    return;
+  }
+  // Vérif expiration
+  if(currentUser.expiry&&new Date(currentUser.expiry)<new Date()){
+    document.getElementById('scan-error').style.display='flex';
+    document.getElementById('scan-error-msg').textContent='Votre abonnement a expiré. Contactez votre administrateur.';
+    return;
+  }
+
+  document.getElementById('scan-error').style.display='none';
+  document.getElementById('results-card').style.display='none';
+  document.getElementById('progress-card').style.display='block';
+  document.getElementById('btn-analyze').disabled=true;
+  setProgress(5,'Lecture des fichiers…',1);
+
+  const myGen=++scanGeneration;
+
+  try{
+    const contents=[];
+    for(const f of uploadedFiles){contents.push(await fileToBlock(f));}
+    contents.push({type:'text',text:PROMPT});
+
+    setProgress(25,'Envoi en cours…',2);
+    const resp=await fetch(getExcelApiUrl()+'/api/analyze',{method:'POST',headers:{
+      'Content-Type':'application/json','Authorization':'Bearer '+getToken()
+    },body:JSON.stringify({model:'claude-sonnet-5',max_tokens:24000,messages:[{role:'user',content:contents}]})});
+
+    setProgress(60,'Extraction Bilan…',3);
+    const respText=await resp.text();
+    let data;
+    try{data=JSON.parse(respText);}catch(e){throw new Error('Réponse serveur ['+resp.status+']: '+respText.slice(0,300));}
+    if(data.error)throw new Error(data.error.message);
+
+    const raw=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+    const clean=raw.replace(/\`\`\`json|\`\`\`/g,'').trim();
+
+    setProgress(80,'Extraction CR & TFT…',4);
+    let extracted;
+    try{
+      extracted=JSON.parse(clean);
+    }catch(e){
+      // Claude a parfois ajouté du texte avant/après le JSON malgré la consigne :
+      // on tente d'isoler le bloc {...} plutôt que d'abandonner tout de suite.
+      const s=clean.indexOf('{'), en=clean.lastIndexOf('}');
+      if(s!==-1&&en>s){
+        try{extracted=JSON.parse(clean.slice(s,en+1));}catch(e2){/* laisse extracted undefined */}
+      }
+    }
+    if(!extracted){
+      console.error('[FinScan] Réponse Claude non-JSON, stop_reason='+data.stop_reason+' :', raw);
+      const truncated=data.stop_reason==='max_tokens';
+      throw new Error(truncated
+        ? 'Le document contient trop de données pour être extrait en une seule fois (réponse coupée). Réessayez avec un document plus court ou moins de pages.'
+        : 'Données invalides — réessayez avec un document plus lisible');
+    }
+
+    extractedData=extracted;
+
+    if(myGen!==scanGeneration)return; // un nouveau scan (ou une réinitialisation) a démarré entre-temps
+
+    setProgress(95,'Finalisation…',5);
+    await incrQuota();
+    await saveHist(currentUser.id,extractedData,uploadedFiles.map(f=>f.name));
+
+    setProgress(100,'Terminé !',6);
+    setTimeout(()=>{
+      if(myGen!==scanGeneration)return;
+      document.getElementById('progress-card').style.display='none';
+      renderResults(extractedData);
+      document.getElementById('btn-analyze').disabled=false;
+    },500);
+
+  }catch(err){
+    if(myGen!==scanGeneration)return; // scan abandonné entre-temps : ne pas afficher une erreur périmée
+    document.getElementById('progress-card').style.display='none';
+    document.getElementById('btn-analyze').disabled=false;
+    document.getElementById('scan-error').style.display='flex';
+    document.getElementById('scan-error-msg').textContent='Erreur : '+err.message;
+  }
+}
+
+// ══════════════════════════════════════
+// RENDER RESULTS
+// ══════════════════════════════════════
+function fmt(v){if(v===0||v)return new Intl.NumberFormat('fr-FR').format(Math.round(Number(v)));return'<span style="color:#ccc">—</span>';}
+
+// ══════════════════════════════════════
+// ALERTES DE RISQUE (calculées, pas laissées à l'appréciation de l'IA)
+// ══════════════════════════════════════
+function computeRiskAlerts(d){
+  const passif=d.bilan_passif||[],cr=d.cr||[],actif=d.bilan_actif||[],tft=d.tft||[];
+  const p=ref=>passif.find(x=>x.ref===ref)||{};
+  const a=ref=>actif.find(x=>x.ref===ref)||{};
+  const g=(ref,field)=>Number(p(ref)[field]||0);
+  const alerts=[];
+
+  const capPropres=field=>g('CA',field)-g('CB',field)+g('CD',field)+g('CE',field)+g('CF',field)+g('CG',field)+g('CH',field)+g('CJ',field)+g('CL',field)+g('CM',field);
+  const cpN=capPropres('net_n');
+  if(cpN<0)alerts.push("Capitaux propres négatifs (situation nette déficitaire) — risque élevé");
+
+  const resultatN=g('CJ','net_n'),resultatN1=g('CJ','net_n1');
+  if(resultatN<0&&resultatN1<0)alerts.push('Résultat net négatif sur 2 exercices consécutifs (N et N-1)');
+
+  const caOf=field=>(cr.find(r=>r.ref==='TA')?.[field]||0)+(cr.find(r=>r.ref==='TB')?.[field]||0)+(cr.find(r=>r.ref==='TC')?.[field]||0);
+  const caN=caOf('n'),caN1=caOf('n1');
+  if(caN1>0&&caN<caN1*0.7)alerts.push(`Baisse du chiffre d'affaires de ${Math.round((1-caN/caN1)*100)}% entre N-1 et N`);
+
+  const dettesFin=g('DA','net_n')+g('DQ','net_n')+g('DR','net_n');
+  if(cpN>0&&dettesFin>cpN*2)alerts.push('Endettement financier élevé (plus de 2x les capitaux propres)');
+
+  const bs=a('BS');
+  const tresorerieN=Number(bs.brut_n||0)-Number(bs.amort_n||0);
+  const tresorerieTFT=tft.find(t=>t.ref==='ZA')?.n;
+  if(tresorerieN<0||(tresorerieTFT!==undefined&&Number(tresorerieTFT)<0))alerts.push('Trésorerie nette négative');
+
+  // Cohérence Résultat Net : le total du Compte de Résultat (somme de toutes
+  // ses lignes, charges déjà en négatif) doit être égal au Résultat Net de
+  // l'exercice (CJ) reporté au Passif du Bilan — sinon l'extraction contient
+  // une erreur quelque part (CR ou Bilan).
+  if(cr.length){
+    const fmt=new Intl.NumberFormat('fr-FR');
+    const crNet=field=>cr.reduce((s,item)=>s+Number(item[field]||0),0);
+    [['n','net_n','N'],['n1','net_n1','N-1'],['n2','net_n2','N-2']].forEach(([crField,passifField,label])=>{
+      const fromCR=crNet(crField),fromBilan=g('CJ',passifField);
+      if(Math.abs(fromCR-fromBilan)>=1){
+        alerts.push(`Incohérence détectée : le résultat net du compte de résultat (${fmt.format(fromCR)}) ne correspond pas à celui du bilan (${fmt.format(fromBilan)}) pour l'exercice ${label} — vérifiez le document source.`);
+      }
+    });
+  }
+
+  return alerts;
+}
+
+// ══════════════════════════════════════
+// DOCUMENT ORIGINAL (onglet comparatif)
+// ══════════════════════════════════════
+let docBlobUrls=[];
+function renderDocPane(){
+  docBlobUrls.forEach(u=>URL.revokeObjectURL(u));docBlobUrls=[];
+  const pane=document.getElementById('pane-doc');
+  if(!uploadedFiles.length){pane.innerHTML='<div class="empty-state"><div class="ei">📄</div><p>Aucun document disponible.</p></div>';return;}
+  pane.innerHTML=uploadedFiles.map(f=>{
+    const url=URL.createObjectURL(f);
+    docBlobUrls.push(url);
+    const isPdf=f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf');
+    const isImg=f.type.startsWith('image/');
+    const viewer=isPdf
+      ?`<iframe src="${url}" style="width:100%;height:80vh;border:1px solid var(--gray2);border-radius:8px;"></iframe>`
+      :isImg
+      ?`<img src="${url}" style="max-width:100%;border:1px solid var(--gray2);border-radius:8px;"/>`
+      :`<div class="alert-row al-warn">⚠️ Aperçu non disponible pour ce type de fichier (${esc(f.name)})</div>`;
+    return `<div style="margin-bottom:1.5rem;"><div style="font-size:12px;font-weight:700;color:var(--text2);margin-bottom:6px;">${esc(f.name)}</div>${viewer}</div>`;
+  }).join('');
+}
+
+function renderResults(d){
+  if(!d)return;
+  document.getElementById('results-card').style.display='block';
+  document.getElementById('results-title').textContent=(d.entreprise||'Document')+' — Extraction terminée';
+  document.getElementById('results-sub').textContent=`N=${d.exercice_n||'?'} · N-1=${d.exercice_n1||'?'} · N-2=${d.exercice_n2||'?'}`;
+
+  const actif=d.bilan_actif||[],passif=d.bilan_passif||[],cr=d.cr||[],tft=d.tft||[];
+  const totalNetActif=actif.reduce((s,p)=>s+((p.brut_n||0)-(p.amort_n||0)),0);
+  const ca=(cr.find(r=>r.ref==='TA')?.n||0)+(cr.find(r=>r.ref==='TB')?.n||0)+(cr.find(r=>r.ref==='TC')?.n||0);
+
+  document.getElementById('stats-row').innerHTML=`
+    <div class="stat-box"><div class="stat-lbl">Entreprise</div><div class="stat-val" style="font-size:13px;">${esc(d.entreprise)||'—'}</div></div>
+    <div class="stat-box"><div class="stat-lbl">Exercice N</div><div class="stat-val g">${d.exercice_n||'?'}</div></div>
+    <div class="stat-box"><div class="stat-lbl">Total Actif Net N</div><div class="stat-val" style="font-size:13px;">${new Intl.NumberFormat('fr-FR').format(totalNetActif)}</div></div>
+    <div class="stat-box"><div class="stat-lbl">Postes extraits</div><div class="stat-val g">${actif.length+passif.length+cr.length+tft.length}</div></div>`;
+
+  document.getElementById('cnt-bilan').textContent=actif.length+passif.length;
+  document.getElementById('cnt-cr').textContent=cr.length;
+  document.getElementById('cnt-tft').textContent=tft.length;
+
+  const riskAlerts=computeRiskAlerts(d);
+  const aiAlerts=d.alertes||[];
+  const allAlerts=[...riskAlerts.map(a=>'🚩 '+a),...aiAlerts.map(a=>'ℹ️ '+a)];
+  document.getElementById('global-alerts').innerHTML=allAlerts.length>0
+    ?allAlerts.map(a=>`<div class="alert-row al-warn">${esc(a)}</div>`).join('')
+    :'<div class="alert-row al-ok">✅ Extraction réussie — Aucun signal de risque détecté</div>';
+
+  document.getElementById('pane-bilan').innerHTML=
+    mkTable('⚖️ ACTIF — '+esc(d.date_n),['Réf.','BRUT N','AMORT N','NET N (calc.)','NET N-1','NET N-2'],
+      actif.map(p=>({cells:[p.ref,fmt(p.brut_n),fmt(p.amort_n),'=F-G (auto)',fmt(p.net_n1),fmt(p.net_n2)],cls:''}))
+    )+mkTable('⚖️ PASSIF',['Réf.','NET N','NET N-1','NET N-2'],
+      passif.map(p=>({cells:[p.ref,fmt(p.net_n),fmt(p.net_n1),fmt(p.net_n2)],cls:''}))
+    );
+
+  document.getElementById('pane-cr').innerHTML=mkTable('📊 COMPTE DE RÉSULTAT',['Réf.','N','N-1','N-2'],
+    cr.map(p=>({cells:[p.ref,fmt(p.n),fmt(p.n1),fmt(p.n2)],cls:''}))
+  );
+  document.getElementById('pane-tft').innerHTML=mkTable('💧 FLUX DE TRÉSORERIE',['Réf.','N','N-1','N-2'],
+    tft.map(p=>({cells:[p.ref,fmt(p.n),fmt(p.n1),fmt(p.n2)],cls:''}))
+  );
+  renderDocPane();
+}
+
+function mkTable(title,headers,rows){
+  return`<div class="result-table-wrap">
+    <div class="rt-head"><span class="rt-head-title">${title}</span><span class="rt-head-cnt">${rows.length} postes</span></div>
+    <table><thead><tr>${headers.map((h,i)=>`<th class="${i>0?'r':''}">${h}</th>`).join('')}</tr></thead>
+    <tbody>${rows.map(r=>`<tr class="${r.cls}">${r.cells.map((c,i)=>`<td class="${i>0?'r':''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+
+// ══════════════════════════════════════
+// EXPORT EXCEL
+// ══════════════════════════════════════
+async function exportExcel(){
+  if(!extractedData){alert("Lancez d'abord une extraction.");return;}
+  const btn=document.querySelector('.btn-act-green');
+  if(btn){btn.textContent='⏳ Génération...';btn.disabled=true;}
+  try{
+    const apiUrl=getExcelApiUrl()+'/fill';
+    const resp=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+getToken()},body:JSON.stringify(extractedData)});
+    if(!resp.ok){const t=await resp.text();throw new Error('API erreur '+resp.status+': '+t.slice(0,200));}
+    const blob=await resp.blob();
+    const entreprise=(extractedData.entreprise||'FinScan').replace(/[^a-zA-Z0-9_\-]/g,'_');
+    const filename=`DEPOUILLEMENT_${entreprise}_${extractedData.exercice_n||'N'}.xlsx`;
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');a.href=url;a.download=filename;
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }catch(err){alert('Erreur : '+err.message);}
+  finally{if(btn){btn.textContent='📥 Télécharger mon Dépouillement';btn.disabled=false;}}
+}
+
+// ══════════════════════════════════════
+// HISTORY (côté serveur — lié au compte, plus au navigateur)
+// ══════════════════════════════════════
+let historyCache=[];
+
+async function migrateLocalHistoryIfNeeded(uid){
+  // Reprend une bonne fois pour toutes l'ancien historique stocké dans le
+  // localStorage du navigateur (ex: après un changement de domaine où il a
+  // été réimporté manuellement) et l'envoie au serveur, pour que ça ne se
+  // reproduise plus jamais.
+  const marker='fsp_hist_migrated_'+uid;
+  if(localStorage.getItem(marker))return;
+  const local=DB.getHistory(uid);
+  if(local.length){
+    for(const item of local.slice().reverse()){ // ordre chronologique : les plus anciens d'abord
+      try{
+        await apiCall('/api/history',{method:'POST',body:JSON.stringify({
+          entreprise:item.entreprise,exercice_n:item.exercice_n,files:item.files,data:item.data
+        })});
+      }catch(e){console.error('Migration historique local→serveur, entrée ignorée:',e);}
+    }
+  }
+  localStorage.setItem(marker,'1');
+}
+
+async function loadHistory(){
+  if(!currentUser)return[];
+  try{
+    const data=await apiCall('/api/history');
+    historyCache=data.history||[];
+  }catch(e){console.error('loadHistory error:',e);historyCache=[];}
+  document.getElementById('hist-badge').textContent=historyCache.length;
+  return historyCache;
+}
+
+async function saveHist(uid,data,files){
+  try{
+    await apiCall('/api/history',{method:'POST',body:JSON.stringify({
+      entreprise:data.entreprise||'Document',exercice_n:data.exercice_n,files,data
+    })});
+  }catch(e){console.error('saveHist error:',e);}
+  await loadHistory();
+}
+
+async function renderHistory(uid){
+  await migrateLocalHistoryIfNeeded(uid);
+  const h=await loadHistory();
+  const div=document.getElementById('hist-container');
+  if(!h.length){div.innerHTML='<div class="empty-state"><div class="ei">📁</div><p>Aucun dépouillement effectué.</p></div>';return;}
+  div.innerHTML='<div class="hist-grid">'+h.map((item,idx)=>{
+    const date=new Date(item.date).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    return`<div class="hist-card">
+      <div class="hist-icon">📄</div>
+      <div class="hist-info">
+        <div class="hist-name">${esc(item.entreprise)}${item.exercice_n?' — '+esc(item.exercice_n):''}</div>
+        <div class="hist-meta">${esc((item.files||[]).slice(0,2).join(', '))}${(item.files||[]).length>2?' +'+(item.files.length-2):''}</div>
+      </div>
+      <div class="hist-right">
+        <span class="hist-date">${date}</span>
+        <button class="btn-hist btn-hist-dl" onclick="redownload(${idx})">⬇️ Excel</button>
+        <button class="btn-hist btn-hist-del" onclick="delHist(${idx})">🗑️</button>
+      </div>
+    </div>`;
+  }).join('')+'</div>';
+}
+
+async function redownload(idx){const item=historyCache[idx];if(!item)return;extractedData=item.data;await exportExcel();}
+async function delHist(idx){
+  if(!confirm('Supprimer ?'))return;
+  const item=historyCache[idx];if(!item)return;
+  try{await apiCall('/api/history/'+item.id,{method:'DELETE'});}
+  catch(e){alert('Erreur : '+e.message);}
+  await renderHistory(currentUser.id);
+}
+
+// ══════════════════════════════════════
+// PROFIL
+// ══════════════════════════════════════
+async function changePwd(){
+  const old=document.getElementById('old-pwd').value;
+  const np=document.getElementById('new-pwd').value;
+  const np2=document.getElementById('new-pwd2').value;
+  if(!old||!np||!np2)return showMsg('profil-msg','Tous les champs sont requis','var(--red)');
+  if(np.length<8)return showMsg('profil-msg','8 caractères minimum','var(--red)');
+  if(np!==np2)return showMsg('profil-msg','Les mots de passe ne correspondent pas','var(--red)');
+  try{
+    const data=await apiCall('/api/change-password',{method:'POST',body:JSON.stringify({oldPassword:old,newPassword:np})});
+    if(data.token)setToken(data.token);
+    showMsg('profil-msg','✅ Mot de passe modifié','var(--green)');
+    ['old-pwd','new-pwd','new-pwd2'].forEach(id=>document.getElementById(id).value='');
+  }catch(e){showMsg('profil-msg',e.message,'var(--red)');}
+}
+
+function showMsg(id,msg,color){
+  const el=document.getElementById(id);
+  el.textContent=msg;el.style.color=color;el.style.display='block';
+  setTimeout(()=>el.style.display='none',4000);
+}
+
+function resetScan(){
+  scanGeneration++;
+  docBlobUrls.forEach(u=>URL.revokeObjectURL(u));docBlobUrls=[];
+  uploadedFiles=[];extractedData=null;renderFiles();
+  document.getElementById('results-card').style.display='none';
+  document.getElementById('progress-card').style.display='none';
+  document.getElementById('file-input-main').value='';
+}
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+// Attacher les événements de connexion de manière robuste
+document.addEventListener('DOMContentLoaded', function() {
+  var btnLogin = document.getElementById('btn-login');
+  if(btnLogin) {
+    btnLogin.addEventListener('click', function(e) {
+      e.preventDefault();
+      doLogin();
+    });
+  }
+  var pwdInput = document.getElementById('login-pwd-input') || document.getElementById('login-pwd');
+  if(pwdInput) {
+    pwdInput.addEventListener('keydown', function(e) {
+      if(e.key === 'Enter') { e.preventDefault(); doLogin(); }
+    });
+  }
+});
+
+(async function init(){
+  if(getToken()){
+    try{
+      const data=await apiCall('/api/me');
+      currentUser=data.user;enterApp(data.user);
+      startSessionWatch();
+    }catch(e){setToken(null);showScreen('auth');}
+  }
+  // Init EmailJS si configuré
+  const cfg=JSON.parse(localStorage.getItem('fsp_email_config')||'{}');
+  if(cfg.pubkey){try{emailjs.init(cfg.pubkey);}catch(e){}}
+})();
+</script>
+</body>
+</html>
