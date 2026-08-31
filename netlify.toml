@@ -1,0 +1,32 @@
+# Site 100% statique (un seul index.html) : l'API (analyse, génération Excel,
+# comptes, publicités) est servie par le backend Flask (finscan-api, sur
+# Render), jamais par des fonctions Netlify. Le bloc [build]/[functions] qui
+# existait ici (proxy Anthropic non authentifié + génération Excel côté
+# Netlify) a été retiré : ces deux fonctions étaient devenues redondantes ET
+# dangereuses (le proxy Anthropic n'imposait ni authentification ni quota,
+# contrairement à /api/analyze côté Flask) — voir netlify/functions/ dans
+# l'historique git si besoin de retrouver l'ancien code.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Empêche le chargement du site dans une <iframe> tierce (clickjacking).
+    X-Frame-Options = "DENY"
+    # Empêche le navigateur de deviner un type MIME différent de celui déclaré
+    # (protection contre certaines classes d'attaques XSS via upload/CDN).
+    X-Content-Type-Options = "nosniff"
+    # N'envoie jamais l'URL complète (avec paramètres) comme referrer vers un
+    # site tiers — seule l'origine est transmise en HTTPS cross-origin.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Coupe l'accès aux API navigateur sensibles qu'une page publicitaire tierce
+    # (dans un encart pub) ou un script injecté pourrait sinon tenter d'utiliser.
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    # HSTS : force HTTPS pour tout visiteur pendant 1 an, y compris les sous-domaines.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    # CSP : le site est une page unique avec tout le CSS/JS embarqué en inline,
+    # donc 'unsafe-inline' reste nécessaire pour script-src/style-src tant que
+    # le site n'est pas réécrit en fichiers séparés avec nonces. Le reste est
+    # verrouillé à la liste exacte des domaines réellement utilisés (polices
+    # Google, Chart.js sur jsdelivr, API FinScan sur Render) — tout le reste
+    # (autre script tiers, iframe, objet plugin) est bloqué par défaut.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://finscan-api-0upz.onrender.com https://*.onrender.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
