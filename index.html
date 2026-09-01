@@ -2202,7 +2202,7 @@ async function incrQuota(){
 // ══════════════════════════════════════
 // FILE UPLOAD
 // ══════════════════════════════════════
-let uploadedFiles=[],extractedData=null,scanGeneration=0,currentAnalyzeController=null;
+let uploadedFiles=[],extractedData=null,scanGeneration=0,currentAnalyzeController=null,analyzeInFlight=false;
 function abortCurrentAnalyze(){
   if(currentAnalyzeController){currentAnalyzeController.abort();currentAnalyzeController=null;}
 }
@@ -2261,6 +2261,24 @@ function setProgress(pct,label,stepIdx){
 // ANALYZE
 // ══════════════════════════════════════
 async function doAnalyze(){
+  // Verrou explicite en plus de btn-analyze.disabled : un double-clic quasi
+  // simultané (rebond de souris/trackpad) peut faire que le navigateur mette
+  // les deux clics en file AVANT que le premier n'ait eu le temps de
+  // désactiver le bouton — désactiver le bouton ne suffit alors pas à
+  // bloquer le second appel. Ce verrou, lui, est vérifié en tout premier,
+  // de façon synchrone, donc infaillible même dans ce cas (deux analyses
+  // lancées pour un seul clic, quota décompté deux fois pour un seul
+  // résultat réellement enregistré).
+  if(analyzeInFlight)return;
+  analyzeInFlight=true;
+  try{
+    await doAnalyzeInner();
+  }finally{
+    analyzeInFlight=false;
+  }
+}
+
+async function doAnalyzeInner(){
   if(!currentUser)return;
   // Vérif quota
   const quota=currentUser.quota||50;
